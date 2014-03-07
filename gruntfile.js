@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         concat: {
              dist: {
         src: [
-            'js/*.js', // All JS in the libs folder
+            'js/vendor/*.js' // All JS in the libs folder
         ],
         dest: 'js/production.js',
     }
@@ -26,13 +26,17 @@ sass: {
             style: 'compressed'
         },
         files: {
-            'css/build.css':'css/build.scss'
+            'css/build.css':'css/stack.scss'
         }
     } 
 },
+
 watch: {
+    options: {
+        livereload: true,
+    },
     scripts: {
-        files: ['js/*.js'],
+        files: ['js/vendor/*.js'],
         tasks: ['concat', 'uglify'],
         options: {
             spawn: false,
@@ -47,13 +51,18 @@ watch: {
         }
     }
 }
+
+
+
     });
 
     // Load All NPM Dependencies
-    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat', 'uglify', , 'sass', 'watch']);
+    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'watch']);
 
 };
