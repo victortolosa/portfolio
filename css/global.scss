@@ -14,7 +14,7 @@
 	position:relative;
 	width:100%;
 	height: 400px;
-	background-color: darken(whitesmoke, 5%);
+	background: darken(whitesmoke, 5%) url(../imgs/paper_fibers.png) repeat repeat;
 }
 .intro {
 	display:inline-block;
@@ -44,7 +44,7 @@
 	height: 80%;
 	width:100%;
 	height: auto;
-	background-color:#333;
+	background: #333 url("../imgs/concrete-wall.png") repeat repeat;
 	float:left;
 	overflow: hidden;
 	.wrap{
@@ -109,11 +109,14 @@ nav ul li {
 }
 
 .contact{
-	background-color: darken(turquoise, 10%);
+	background: darken(turquoise, 10%) url("../imgs/concrete-wall.png") repeat repeat;
 	width:100%;
 	padding-bottom:200px;
 	height: 100%;
 	float:left;
+	.wrap{
+		max-width: 1000px;
+	}
 }
 .contactme{
 	background-color:#fff;
@@ -140,10 +143,11 @@ input{
 #name{
 	border:none;
 	outline:none;
-	border-bottom: solid 3px #fff;
+	border-color: #fff;
+	border-bottom: solid 3px rgba(255,255,255,.5);
 	font-size:30px;
-	background-color: darken(turquoise, 10%);
-	width: 50%;
+	background-color: rgba(0,0,0,0);
+	width: 100%;
 	height:60px;
 	padding-left: 20px;
 	&::-webkit-input-placeholder {
@@ -162,16 +166,19 @@ input{
 	   color: rgba(255,255,255,.5);
 	}
 	&:focus{
-			background-color: darken(turquoise, 15%);
+		transition: all 300ms;
+		background-color: darken(turquoise, 15%);
+		border-color:#fff;
 	}
 }
 #email{
 	border:none;
 	outline:none;
-	border-bottom: solid 3px #fff;
+	border-color: #fff;
+	border-bottom: solid 3px rgba(255,255,255,.5);
 	font-size:30px;
-	background-color: darken(turquoise, 10%);
-	width: 50%;
+	background-color: rgba(0,0,0,0);
+	width: 100%;
 	height:60px;
 	padding-left: 20px;
 	&::-webkit-input-placeholder {
@@ -187,20 +194,22 @@ input{
 	   color: rgba(255,255,255,.5);
 	}
 	&:focus{
-
-			background-color: darken(turquoise, 15%);
+		transition: all 300ms;
+		border-color:#fff;
+		background-color: darken(turquoise, 15%);
 	}
 }
 #form{
 	border:none;
 	outline:none;
-	border-bottom: solid 3px #fff;
+	border-color: #fff;
+	border-bottom: solid 3px rgba(255,255,255,.5);
 	font-size:30px;
-	background-color: darken(turquoise, 10%);
-	width: 50%;
+	background-color: rgba(0,0,0,0);
+	width: 100%;
 	height: 50px;
 	padding-left: 20px;
-	padding-top:20px;
+	padding-top:15px;
 	transition: all 300ms;
 	&::-webkit-input-placeholder {
 	   color: rgba(255,255,255,.5);
@@ -221,12 +230,20 @@ input{
 		background-color: darken(turquoise, 15%);
 		transition: all 300ms;
 		height:300px;
+		border-color:#fff;
+		transition: all 300ms;
+		}
 	}
-}
+	@media(max-height: 900px){
+			#form:focus{
+				height:100px;
+			}
+		}
+	
 .buttonholder{
-	width:50%;
+	width:100%;
 	float:left;
-	margin-top:20px;
+	margin-top:50px;
 }
 .submit-button {
 	color:#fff;
@@ -238,7 +255,7 @@ input{
 	height:60px;
 	border:none;
 	background-color:darken(pink, 15%);
-	border-bottom: solid 3px #fff;
+
 }
 
 footer {
@@ -246,5 +263,5 @@ footer {
 	float:left;
 	width:100%;
 	height:300px;
-	background-color: #333;
+	background:#333 url("../imgs/black-felt.png") repeat repeat;
 }
