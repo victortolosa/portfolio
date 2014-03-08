@@ -1,0 +1,10 @@
+live:
+    scheme: ftp
+    host: ftp.victortolosa.com
+    port: 21
+    user: vtolosa2
+    pass: 
+    check: true
+    path:
+        local: 
+        remote: public_html/portfolio

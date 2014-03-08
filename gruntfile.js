@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         concat: {
              dist: {
         src: [
-            'js/vendor/*.js' // All JS in the libs folder
+            'js/stack/*.js'
         ],
         dest: 'js/production.js',
     }
@@ -32,11 +32,8 @@ sass: {
 },
 
 watch: {
-    options: {
-        livereload: true,
-    },
     scripts: {
-        files: ['js/vendor/*.js'],
+        files: ['js/stack/*.js'],
         tasks: ['concat', 'uglify'],
         options: {
             spawn: false,

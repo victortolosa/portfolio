@@ -6,9 +6,95 @@
 	<link rel="stylesheet" href="css/build.css" type="text/css">
 </head>
 <body>
-	<h1>h1 Test</h1>
-	<h2>h2 Test</h2>
-	<h3>h3 Test</h3>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, eos, fuga quas sint voluptatibus earum officia! Eum, quaerat, cum, ab sequi a nulla modi odit voluptate autem quasi ratione pariatur?</p>
+	<div class="container">
+		<nav>
+		<ul>
+			<li>Work</li>
+			<li>About Me</li>
+			<li>Contact</li>
+		</ul>
+		</nav>
+		<section class="header">
+			<div class="wrap">
+				<span class="intro">
+				<h1 class="hello"> Hello There,
+				<br> I'm Victor Tolosa</h1>
+				<h1 class="highlight light special">Web &amp;  Graphic Designer</h1>
+				</span>
+			</div>
+		</section>
+		<div class="work">
+			<div class="wrap">
+				<h1 class="light title me">Recent Work</h1>
+					<div id="allwork">
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					
+				
+
+
+
+
+				
+			</div>
+		</div>
+		<div class="about">
+			<div class="wrap">
+
+				<h1 class="light title me">About Me</h1>
+				<p>I design and build interfaces for the websites, mobile &amp; web applications  &mdash; Honestly anything and everything I can get my hands on.</p>
+				<hr>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, natus, quisquam, omnis odit assumenda vitae ex iusto provident doloribus voluptatum ratione unde ea minima error quo sit voluptas pariatur alias!</p>
+				<p>Id, fuga, molestiae, porro, et quibusdam architecto quos modi unde aperiam reprehenderit praesentium quisquam error pariatur minus nesciunt ad earum quam nam sint excepturi! Nulla, reprehenderit expedita unde fugit assumenda?</p>
+			</div>
+		</div>
+		<section class="contact">
+		<div class="wrap">
+				<span class="form">
+				<h1 class="title contactme">Contact Me</h1>
+				
+			<form method="post" action="contactengine.php">
+				<span class="nameholder">
+				<label for="Name">Name:</label>
+				<input type="text" name="Name" id="Name" />
+				</span>
+				<span class="emailholder">
+				<label for="Email">Email:</label>
+				<input type="text" name="Email" id="Email" />
+				</span>
+				<span class="messageholder">
+				<label for="Message">Message:</label><br />
+				<textarea name="Message" rows="20" cols="20" id="Message"></textarea>
+				</span>
+
+				<input type="submit" name="submit" value="Submit" class="submit-button" />
+			</form>
+			
+				</span>
+			</div>
+		</section>
+		<footer>
+		</footer>
+	</div>
+<script src="js/production.min.js"></script>
+<script type="text/javascript">
+	skrollr.init({
+		forceHeight: false
+	});
+	</script>
 </body>
 </html>
