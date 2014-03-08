@@ -124,7 +124,116 @@ input{
 
 }
 .nameholder,.emailholder,.messageholder{
+	margin-left: -15px;
 	display: inline-block;
 	width:100%;
+	min-width:300px;
 	height:auto;
+	float:left;
+	color:#fff;
+	
+}
+
+#name{
+	border:none;
+	outline:none;
+	border-bottom: solid 3px #fff;
+	font-size:30px;
+	background-color: darken(turquoise, 10%);
+	width: 50%;
+	height:60px;
+	padding-left: 20px;
+	&::-webkit-input-placeholder {
+	   color: rgba(255,255,255,.5);
+	}
+
+	&::-moz-placeholder { /* Firefox 18- */
+	   color: rgba(255,255,255,.5);
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+	   color: rgba(255,255,255,.5);  
+	}
+
+	&:-ms-input-placeholder {  
+	   color: rgba(255,255,255,.5);
+	}
+	&:focus{
+			background-color: darken(turquoise, 15%);
+	}
+}
+#email{
+	border:none;
+	outline:none;
+	border-bottom: solid 3px #fff;
+	font-size:30px;
+	background-color: darken(turquoise, 10%);
+	width: 50%;
+	height:60px;
+	padding-left: 20px;
+	&::-webkit-input-placeholder {
+	   color: rgba(255,255,255,.5);
+	}
+	&::-moz-placeholder { /* Firefox 18- */
+	   color: rgba(255,255,255,.5); 
+	}
+	&::-moz-placeholder {  /* Firefox 19+ */
+	   color: rgba(255,255,255,.5);
+	}
+	&:-ms-input-placeholder {  
+	   color: rgba(255,255,255,.5);
+	}
+	&:focus{
+
+			background-color: darken(turquoise, 15%);
+	}
+}
+#form{
+	border:none;
+	outline:none;
+	border-bottom: solid 3px #fff;
+	font-size:30px;
+	background-color: darken(turquoise, 10%);
+	width: 50%;
+	height: 60px;
+	padding-left: 20px;
+	padding-top:20px;
+	transition: all 300ms;
+	&::-webkit-input-placeholder {
+	   color: rgba(255,255,255,.5);
+	}
+
+	&::-moz-placeholder { /* Firefox 18- */
+	   color: rgba(255,255,255,.5); 
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+	   color: rgba(255,255,255,.5); 
+	}
+
+	&:-ms-input-placeholder {  
+	   color: rgba(255,255,255,.5); 
+	}
+	&:focus{
+		background-color: darken(turquoise, 15%);
+		transition: all 300ms;
+		height:400px;
+	}
+}
+.buttonholder{
+	width:50%;
+	float:left;
+	margin-top:20px;
+}
+.submit-button {
+	color:#fff;
+	float:right;
+	font-family: klinic-medium;
+	font-size:20px;
+	background-color: #000;
+	width:100px;
+	height:60px;
+	border:none;
+	background-color:darken(pink, 15%);
+	border-bottom: solid 3px #fff;
 }
