@@ -5,15 +5,18 @@
 	<title>Portfolio</title>
 	<link rel="stylesheet" href="css/build.css" type="text/css">
 </head>
-<body>
-	<div class="container">
-		<nav>
+<body>	
+	<nav>
 		<ul>
 			<li><a href="#" class="towork">Work</a></li>
 			<li><a href="#" class="toabout">About Me</a></li>
 			<li><a href="#" class="tocontact">Contact</a></li>
 		</ul>
-		</nav>
+		
+	</nav>
+	<div class="container">
+		
+		<div class="main">
 		<section class="header">
 			<div class="wrap">
 				<span class="intro">
@@ -26,30 +29,10 @@
 		<div class="work">
 			<div class="wrap">
 				<h1 class="light title me">Recent Work</h1>
-					<div id="allwork">
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/placeholder1.png" class="item" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					
-				
-
-
-
-
-				
+				<div id="allwork">
+					<img src="imgs/placeholder1.png" class="item" id="somafm" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" id="bikenow" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+				</div>
 			</div>
 		</div>
 		<div class="about">
@@ -82,17 +65,46 @@
 			</form>
 			
 				</span>
-			</div>
+		</div>
 		</section>
+		</div>
+		<div class="project">
+		<button class="back">Back</button>
+		</div>
 		<footer>
 		Footer Stuff
 		</footer>
 	</div>
+
 <script src="js/production.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-<script type="text/javascript">
+<!--<script type="text/javascript">
 	skrollr.init({
 		forceHeight: false
+	});	
+
+	</script> -->
+	<script>
+	$('.item').on("click", function(){
+		$(".main").fadeOut();
+		$(".project").fadeIn();
+		$(".container").addClass("border");
+		$('html, body').animate({
+    scrollTop: 0 }, 400);
+	});
+
+	$(".back").on("click", function(){
+		$(".project").fadeOut();
+		$(".container").removeClass("border");
+		$(".main").fadeIn();
+		$('html, body').animate({
+    scrollTop: $(".work").offset().top
+ }, 400);
+	});
+
+
+	$(".item").on ("click", function(){
+		var projectName = $(this).attr('id');
+		$( ".container" ).load( "projects/" + projectName + ".html" );
 	});
 	</script>
 </body>
