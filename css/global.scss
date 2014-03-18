@@ -6,7 +6,7 @@ $turq: darken(turquoise, 10%);
 -moz-box-sizing: border-box;    /* Firefox, other Gecko */
 box-sizing: border-box;         /* Opera/IE 8+ */
 }
-.container {
+#container {
 	width: 100%;
 	height: auto;
 	position:relative;
@@ -286,9 +286,10 @@ footer {
 	z-index:10000;
 	cursor: pointer;
 	position:fixed;
-	right:5%;
+	top:0;right:0;
 	border:none;
 	padding:50px;
+	margin:10px;
 
 	background-color: transparent;
 	i {
@@ -310,8 +311,14 @@ footer {
 	
 }
 
-.border{
+.somafm-border{
 	border:solid 10px $pink;
+}
+.bikenow-border{
+	border:solid 10px $turq;
+}
+.no-border{
+	border:none;
 }
 
 .project-content{

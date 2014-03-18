@@ -10,7 +10,7 @@
 <body>	
 	
 	<button class="back"><i class="fa fa-reply"></i></button>
-	<div class="container">
+	<div id="container">
 
 		<div class="main">
 			<nav>
@@ -93,24 +93,20 @@
 		var projectName = $(this).attr('id');
 		$( ".project" ).load( "projects/" + projectName + ".html" );
 		$(".main").fadeOut();
-		$(".container").addClass("border");
-		$(".project").fadeIn(1000);
-		$('html, body').animate({scrollTop: 0 }, 0);
-		$("button").fadeIn(1000);
+		$("#container").addClass( projectName + "-border");
+		$(".project, .back").fadeIn(1000);
+		$('html, body').animate({scrollTop: 0 }, 400);
+	
 	});
 
 	$(".back").on("click", function(){
 		$(".project").fadeOut().empty();
-		$(".container").removeClass("border");
+		$("#container").removeClass();
 		$(".main").fadeIn();
 		$('html, body').animate({ scrollTop: $(".work").offset().top }, 400);
 		$("button").fadeOut();
 	});
 
-	$(".item").on ("click", function(){
-		
-
-	});
 	</script>
 </body>
 </html>
