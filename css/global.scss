@@ -287,6 +287,13 @@ footer {
 	z-index:100000;
 	cursor: pointer;
 	position:fixed;
+	border:none;
+	padding:50px;
+	background-color: none;
+	i {
+	font-size: 80px;
+	color:#000;
+	}
 }
 /* Project Slide */
 .project{
@@ -312,7 +319,3 @@ footer {
 	background-color: $pink;
 }
 
-i {
-	font-size: 100px;
-	color:#000;
-}
