@@ -90,3 +90,24 @@ a {
   height: 100%;
   content: "";
 }
+.project-title {
+  background-color:red;
+  font-size: 40px;
+  display: inline-block;
+  position: relative;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right:20px;
+  z-index:10;
+
+}
+.project-title:before {
+  z-index:-10;
+  display: block;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 0px;
+  height: 100%;
+  content: "";
+}

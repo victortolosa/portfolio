@@ -1,3 +1,6 @@
+$pink: darken(pink, 15%);
+$turq: darken(turquoise, 10%);
+
 * {
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -74,7 +77,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	height:100%;
 	background-color: darken(whitesmoke, 5%);
 	float:left;
-	padding-bottom:100px;
+	padding-bottom:150px;
 
 	p {
 		color: #333;
@@ -86,11 +89,10 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	}
 }
 .me{
-	background-color:darken(pink, 15%);
+	background-color: $pink;
 	color:#333;
 	font-family: klinic-medium;
 }
-
 
 .item{
 	display: relative;
@@ -104,19 +106,20 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 nav ul {
-	z-index:100;
+	z-index:1000;
 	position: fixed;
 	right:0;
 	width:600px;
 	height:100px;
 }
+
 nav ul li {
+	position:relative;
+	z-index:1000;
 	padding-left: 30px;
 	display: block;
 	float:left;
 	font-size:20px;
-
-
 }
 
 .contact{
@@ -127,8 +130,10 @@ nav ul li {
 	float:left;
 	.wrap{
 		max-width: 1000px;
+		margin-top:10%;
 	}
 }
+
 .contactme{
 	background-color:#fff;
 }
@@ -250,7 +255,7 @@ input{
 				height:100px;
 			}
 		}
-	
+
 .buttonholder{
 	width:100%;
 	float:left;
@@ -273,19 +278,20 @@ footer {
 	display:block;
 	float:left;
 	width:100%;
-	position:relative;
 	height:300px;
 	background:#333 url("../imgs/black-felt.png") repeat repeat;
 }
 
 .back{
+	display:none;
+	z-index:100000;
 	cursor: pointer;
+	position:fixed;
 }
 /* Project Slide */
 .project{
-	height:1200px;
+	height: auto;
 	width: 100%;
-	background-color:red;
 	float:left;
 	display:none;
 	
@@ -293,4 +299,15 @@ footer {
 
 .border{
 	border:solid 10px #000;
+}
+
+.project-content{
+	width:100%;
+	max-width:1200px;
+	margin: 0 auto;
+	padding:100px;
+}
+
+.project-title{
+	background-color: $pink;
 }

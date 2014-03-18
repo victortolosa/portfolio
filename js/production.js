@@ -1712,3 +1712,4 @@ $('html, body').animate({
     scrollTop: $(".contact").offset().top
  }, 400);
 });
+
