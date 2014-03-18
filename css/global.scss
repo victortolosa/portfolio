@@ -106,8 +106,8 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 nav ul {
-	z-index:1000;
-	position: fixed;
+	z-index:10;
+	position: absolute;
 	right:0;
 	width:600px;
 	height:100px;
@@ -115,7 +115,6 @@ nav ul {
 
 nav ul li {
 	position:relative;
-	z-index:1000;
 	padding-left: 30px;
 	display: block;
 	float:left;
@@ -284,19 +283,26 @@ footer {
 
 .back{
 	display:none;
-	z-index:100000;
+	z-index:10000;
 	cursor: pointer;
 	position:fixed;
+	right:5%;
 	border:none;
 	padding:50px;
+
 	background-color: transparent;
 	i {
-	font-size: 80px;
-	color:#000;
+	font-size: 60px;
+	color:rgba(0,0,0,.5);
+	}
+	&:focus{
+		outline: none;
 	}
 }
 /* Project Slide */
 .project{
+	position: relative;
+	z-index:1000;
 	height: auto;
 	width: 100%;
 	float:left;
@@ -305,7 +311,7 @@ footer {
 }
 
 .border{
-	border:solid 10px #000;
+	border:solid 10px $pink;
 }
 
 .project-content{

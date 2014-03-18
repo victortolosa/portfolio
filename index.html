@@ -8,7 +8,12 @@
 
 </head>
 <body>	
-	<nav>
+	
+	<button class="back"><i class="fa fa-reply"></i></button>
+	<div class="container">
+
+		<div class="main">
+			<nav>
 		<ul>
 			<li><a href="#" class="towork">Work</a></li>
 			<li><a href="#" class="toabout">About Me</a></li>
@@ -16,9 +21,6 @@
 		</ul>
 		
 	</nav>
-	<button class="back"><i class="fa fa-reply"></i></button>
-	<div class="container">
-		<div class="main">
 		<section class="header">
 			<div class="wrap">
 				<span class="intro">
@@ -69,13 +71,14 @@
 				</span>
 		</div>
 		</section>
+		<footer>
+		Footer Stuff
+		</footer>
 		</div>
 		<div class="project">
 
 		</div>
-		<footer>
-		Footer Stuff
-		</footer>
+		
 	</div>
 
 <script src="js/production.min.js"></script>
@@ -93,7 +96,7 @@
 		$(".container").addClass("border");
 		$(".project").fadeIn(1000);
 		$('html, body').animate({scrollTop: 0 }, 0);
-		$("button").show();
+		$("button").fadeIn(1000);
 	});
 
 	$(".back").on("click", function(){
@@ -101,7 +104,7 @@
 		$(".container").removeClass("border");
 		$(".main").fadeIn();
 		$('html, body').animate({ scrollTop: $(".work").offset().top }, 400);
-		$("button").hide();
+		$("button").fadeOut();
 	});
 
 	$(".item").on ("click", function(){
