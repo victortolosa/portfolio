@@ -86,8 +86,8 @@
 	<script>
 	$('.item').on("click", function(){
 		$(".main").fadeOut();
-		$(".project").fadeIn();
 		$(".container").addClass("border");
+		$(".project").fadeIn(2000);
 		$('html, body').animate({
     scrollTop: 0 }, 400);
 	});
@@ -96,11 +96,8 @@
 		$(".project").fadeOut();
 		$(".container").removeClass("border");
 		$(".main").fadeIn();
-		$('html, body').animate({
-    scrollTop: $(".work").offset().top
- }, 400);
+		$('html, body').animate({ scrollTop: $(".work").offset().top }, 400);
 	});
-
 
 	$(".item").on ("click", function(){
 		var projectName = $(this).attr('id');
