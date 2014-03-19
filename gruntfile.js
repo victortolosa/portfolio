@@ -31,6 +31,20 @@ sass: {
     } 
 },
 
+autoprefixer: {
+    options: {
+      // Task-specific options go here.
+    },
+    single_file: {
+      options: {
+        // Target-specific options go here.
+      },
+      src: 'css/build.css',
+      dest: 'css/build.prefixed.css'
+  },
+},
+
+
 watch: {
     scripts: {
         files: ['js/stack/*.js'],
@@ -42,7 +56,7 @@ watch: {
 
         css: {
         files: ['css/*.scss'],
-        tasks: ['sass'],
+        tasks: ['sass', 'autoprefixer'],
         options: {
             spawn: false,
         }
@@ -57,9 +71,10 @@ watch: {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'watch']);
+    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'autoprefixer', 'watch']);
 
 };
