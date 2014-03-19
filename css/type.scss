@@ -39,10 +39,10 @@ a {
   padding-right:20px;
   z-index:10;
   transition: all 500ms;
-  //background-color:darken(turquoise, 25%);
   color:#fff;
+  background-color:darken(turquoise, 10%);
 }
-.highlight:before {
+.highlight:after {
   z-index:-10;
   display: block;
   position: absolute;
@@ -53,8 +53,6 @@ a {
   content: "";
   background-color:darken(turquoise, 10%);
   transition: width 500ms;
-  -webkit-animation: onload 1s;
-  -webkit-animation-fill-mode: forwards;
   animation: onload 1s;
   animation-fill-mode: forwards;
 }
@@ -63,12 +61,6 @@ a {
 	0%{ width:0;}
 	100%{ width: 100%; }
 }
-@-webkit-keyframes onload
-{
-	0%{ width:0;}
-	100%{ width: 100%; }
-}
-
 
 .title {
   font-size: 40px;
