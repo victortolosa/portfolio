@@ -87,7 +87,7 @@
 		var projectName = $(this).attr('id');
 		$( ".project" ).load( "projects/" + projectName + ".html" );
 		$(".main").fadeOut();
-		$(".project, .back").fadeIn(1000);
+		$(".project, .back").fadeIn(2000);
 		$('html, body').animate({scrollTop: 0 }, 400);
 		$("#container").addClass( projectName + "-border");
 	
