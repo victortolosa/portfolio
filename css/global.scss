@@ -330,12 +330,21 @@ footer {
 
 }
 
+.header-img{
+	position:absolute;
+	top:0;right:0;left:0;
+	height:400px;
+	background: #333 url('../imgs/projects/bikenow.png') center center no-repeat;
+}
+
 .project-title{
 	background-color: $pink;
+	margin-top:190px;
 }
 
 .turq-bg{
 	background-color: $turq;
+	color:#fff;
 }
 
 .pink-bg{
