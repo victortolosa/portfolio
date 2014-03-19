@@ -8,7 +8,7 @@
 
 </head>
 <body>	
-
+	
 	<button class="back"><i class="fa fa-reply"></i></button>
 	<div id="container">
 
@@ -43,7 +43,7 @@
 			<div class="wrap">
 
 				<h1 class="light title me">About Me</h1>
-				<p>I design and build for websites, mobile &amp; web applications  &mdash; Honestly anything and everything I can get my hands on.</p>
+				<p>I design and build interfaces for the websites, mobile &amp; web applications  &mdash; Honestly anything and everything I can get my hands on.</p>
 				<hr>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, natus, quisquam, omnis odit assumenda vitae ex iusto provident Id, fuga, molestiae, porro, et quibusdam architecto quos modi unde aperiam reprehenderit praesentium quisquam error pariatur minus nesciunt ad earum quam nam sint excepturi! Nulla, reprehenderit expedita unde fugit assumenda?</p>
 			</div>
@@ -82,21 +82,14 @@
 	</div>
 
 <script src="js/production.min.js"></script>
-<script type="text/javascript">
-	/*
-	skrollr.init({
-		forceHeight: false
-	});	
-    */
-	</script> 
 	<script>
 	$('.item').on("click", function(){
 		var projectName = $(this).attr('id');
 		$( ".project" ).load( "projects/" + projectName + ".html" );
-		$("#container").addClass( projectName + "-border");
-		$(".main").fadeOut(100);
+		$(".main").fadeOut();
 		$(".project, .back").fadeIn(1000);
-		$('html, body').delay(100).animate({scrollTop: 0 }, 200);
+		$('html, body').animate({scrollTop: 0 }, 400);
+		$("#container").addClass( projectName + "-border");
 	
 	});
 

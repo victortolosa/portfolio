@@ -2,7 +2,7 @@ $pink: darken(pink, 15%);
 $turq: darken(turquoise, 10%);
 
 * {
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 -moz-box-sizing: border-box;    /* Firefox, other Gecko */
 box-sizing: border-box;         /* Opera/IE 8+ */
 }
@@ -305,10 +305,11 @@ footer {
 	position: relative;
 	z-index:1000;
 	height: auto;
+	min-height:100vh;
 	width: 100%;
 	float:left;
 	display:none;
-	
+
 }
 
 .somafm-border{
@@ -326,6 +327,7 @@ footer {
 	max-width:1200px;
 	margin: 0 auto;
 	padding:100px;
+
 }
 
 .project-title{
