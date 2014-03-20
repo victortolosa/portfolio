@@ -33,6 +33,13 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	max-width:1100px;
 	margin: 0 auto;
 }
+
+@keyframes glow
+{
+	0%{ color:#333;}
+	50%{ color: darken($turq, 18%); }
+	0%{ color:#333;}
+}
 .header {
 	position:relative;
 	width:100%;
@@ -57,7 +64,9 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		bottom:10px;
 		transition: color 300ms;
 		cursor:pointer;
+		animation: glow 2s infinite;
 		&:hover{
+			-webkit-animation: 0;
 			color:$turq;
 		}
 
@@ -211,7 +220,7 @@ nav ul li {
 	}
 	.contactme{
 		color:#fff;
-		border: solid 3px rgba(255,255,255, .5);
+		border: solid 3px #fff;
 	}
 }
 
@@ -238,7 +247,7 @@ input{
 	border:none;
 	outline:none;
 	border-color: #fff;
-	border-bottom: solid 3px rgba(255,255,255,.5);
+	border-bottom: solid 3px rgba(255,255,255,1);
 	font-size:30px;
 	background-color: rgba(0,0,0,0);
 	width: 100%;
@@ -269,7 +278,7 @@ input{
 	border:none;
 	outline:none;
 	border-color: #fff;
-	border-bottom: solid 3px rgba(255,255,255,.5);
+	border-bottom: solid 3px rgba(255,255,255,1);
 	font-size:30px;
 	background-color: rgba(0,0,0,0);
 	width: 100%;
@@ -297,7 +306,7 @@ input{
 	border:none;
 	outline:none;
 	border-color: #fff;
-	border-bottom: solid 3px rgba(255,255,255,.5);
+	border-bottom: solid 3px rgba(255,255,255,1);
 	font-size:30px;
 	background-color: rgba(0,0,0,0);
 	width: 100%;
@@ -364,7 +373,7 @@ input{
 	padding:0;margin:0;
 	height: auto;
 	position:relative;
-	padding-bottom: 60px;
+	padding-bottom: 40px;
 	.wrap{
 		margin-top:80px;
 	}
@@ -411,18 +420,23 @@ input{
 		border-bottom: 20px solid $pink;
 	}
 }
-footer {
+.social {
 	display:block;
 	float:left;
 	width:100%;
-	height:250px;
+	height:400px;
 	background:#333 url("../imgs/black-felt.png") repeat repeat;
 	.wrap {
 		width: 100%;
-		height:auto;
-		padding-top:100px;
-		margin:auto;
-		overflow:hidden;
+		height:100%;
+		
+		margin: 50px auto;
+		
+	}
+	.title{
+		border: solid 3px $pink;
+		color:$pink;
+		margin-bottom:0;
 	}
 }
 svg {
@@ -523,18 +537,20 @@ svg {
 .pink-bg{
 	background-color: $pink;
 }
-
+.iconwrap{
+	width:100%;
+	height: 100%;
+	margin: 80px auto;
+}
 .icon{
 	display: block;
-	width:290px;
+	width:300px;
 	height:100px;
 	float:left;
 	cursor:pointer;
+
 	&:last-child{
-		width:200px;
-	}
-	@include breakpoint(medium){
-		width:200px;
+		width:150px;
 	}
 	&:hover path{
 		fill: $turq;
@@ -546,17 +562,27 @@ svg {
 		transition: all 300ms;
 		
 	}
+	&:hover i{
+		color: $turq;
+		transition: all 300ms;
+		
+	}
 	h1 {
-
 		color:#fff;
 		font-size:25px;
 		display:inline-block;
 		margin-left:20px;
 		line-height:20px;
 	}
+	i {
+		color:#fff;
+		font-size:50px;
+		float:left;
+	}
 }
 
-.uptop{
+i.uptop{
+	display:block;
 	display:none;
 	cursor: pointer;
 	position: fixed;
@@ -564,5 +590,63 @@ svg {
 	margin:20px;
 	color:#000;
 	font-size: 50px;
-	text-shadow: 0 0 5px rgba(255,255,255,.1);
+	transition: color 300ms;
+	border-radius: 7px;
+	height:40px;
+	&:hover{
+		color: #444;
+	}
+}
+
+footer {
+	background-color: lighten(#000, 9%);
+	position:relative;
+	float:left;
+	height:180px;
+	width:100%;
+	color:#fff;
+
+	.wrap{
+		padding-top:40px;
+		a {
+			font-size:24px;
+			font-family: klinic-light;
+			color:#555;
+			&:hover{
+			color: $turq;
+			transition: color 300ms;
+			}
+		}
+	}
+	hr {
+		float:left;
+		color:#444;
+		border-bottom: 1px #444;
+		display: block;
+		width: 300px;
+		margin-bottom:5px;
+		&:before{
+			content:"";
+			clear: both; 
+			float: left; 
+			display: block; 
+			position: relative;
+		}
+	}
+	p{
+		padding:0;margin:0;
+		display: inline-block;
+		float:left;
+		width:100%;
+		height:24px;
+		font-size:20px;
+		color:#555;
+	
+		
+	}
+	i{
+		color: #444;
+		font-size:20px;
+	}
+
 }
