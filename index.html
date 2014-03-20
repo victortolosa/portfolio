@@ -62,7 +62,7 @@
 			<div class="wrap">
 				<h1>Download My Resume</h1>
 				<h1>Visit My LinkedIn</h1>
-				
+
 			</div>
 		</section>
 		<section class="contact">
@@ -223,8 +223,10 @@
 	});
 
 	function checkScroll(){
-		if($(window).scrollTop() > 600){
-			
+		if($(window).scrollTop() > 1000){
+			$(".uptop").fadeIn();
+		} else {
+			$(".uptop").fadeOut();
 		}
 	}
 	$(window).scroll( function(){
