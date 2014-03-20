@@ -1695,7 +1695,7 @@ return d||(f=$b[b],$b[b]=e,e=null!=c(a,b,d)?b.toLowerCase():null,$b[b]=f),e}});v
 	}
 
 }(window, document));
-$(".towork").on("click", function(){
+$(".towork, .more").on("click", function(){
 $('html, body').animate({
     scrollTop: $(".work").offset().top
  }, 400);

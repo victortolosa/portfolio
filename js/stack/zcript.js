@@ -1,4 +1,4 @@
-$(".towork").on("click", function(){
+$(".towork, .more").on("click", function(){
 $('html, body').animate({
     scrollTop: $(".work").offset().top
  }, 400);
