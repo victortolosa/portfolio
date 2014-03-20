@@ -335,11 +335,11 @@ svg {
 	border:none;
 	padding:40px;
 	margin:30px;
-	text-shadow: 0 0 3px #fff;
+	text-shadow: 0 0 3px rgba(255,255,255,.3);
 	background-color:transparent;
 	i {
 	font-size: 60px;
-	color:rgba(0,0,0,.5);
+	color:rgba(0,0,0,.9);
 	}
 	&:focus{
 		outline: none;
