@@ -36,6 +36,14 @@
 				<div id="allwork">
 					<img src="imgs/placeholder1.png" class="item" id="somafm" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
 					<img src="imgs/placeholder1.png" class="item" id="bikenow" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" id="sterngrove" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" id="seamless" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" id="bestbay" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" id="negativespace" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" id="infanta" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" id="vape" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" id="coffee" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<img src="imgs/placeholder1.png" class="item" id="illustrations" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
 				</div>
 			</div>
 		</div>
@@ -72,7 +80,8 @@
 		</div>
 		</section>
 		<footer>
-
+		<div class="icon-wrap">
+		<div class="icon">
 		<svg  class="codepen" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 70 70" enable-background="new 0 0 70 70" xml:space="preserve">
 <g>
@@ -103,7 +112,10 @@
 		C53.161,34.257,53.161,36.078,53.161,38.249z"/>
 </g>
 </svg>
+<h1>Codepen</h1>
+</div>
 
+<div class="icon">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 70 70" enable-background="new 0 0 70 70" xml:space="preserve">
 <g>
@@ -123,7 +135,9 @@
 		C53.072,33,51.799,31.959,49.679,31.732z"/>
 </g>
 </svg>
-
+<h1>Behance</h1>
+</div>
+<div class="icon">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 70 70" enable-background="new 0 0 70 70" xml:space="preserve">
 <g>
@@ -152,8 +166,10 @@
 		c0.413-0.077,0.702-0.366,0.652-0.648C26.187,56.926,25.817,56.757,25.403,56.829z"/>
 </g>
 </svg>
-
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<h1>GitHub</h1>
+</div>
+<div class="icon">
+<svg class="linkedin" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 70 70" enable-background="new 0 0 70 70" xml:space="preserve">
 <g>
 	<path fill="#FFFFFF" d="M63.168,1H6.461C3.75,1,1,2.515,1,5.16v56.952C1,64.762,3.75,69,6.461,69h56.707
@@ -163,8 +179,11 @@
 		V59H27V25h10v5h0.08c1.318-1,4.912-5.302,9.714-5.302C56.782,24.698,59,31.1,59,39.655V59z"/>
 </g>
 </svg>
-
+<h1>LinkedIn</h1>
+</div>
+</div>
 		</footer>
+
 		</div>
 		<div class="project">
 
@@ -176,12 +195,12 @@
 	<script>
 	$('.item').on("click", function(){
 		var projectName = $(this).attr('id');
-		$( ".project" ).load( "projects/" + projectName + ".html" );
-		$(".main").fadeOut();
-		$(".project, .back").fadeIn(2000);
-		$('html, body').animate({scrollTop: 0 }, 400);
-		$("#container").addClass( projectName + "-border");
-	
+		$( ".project" ).load( "projects/" + projectName + ".html", function(){
+			$(".main").fadeOut();
+			$(".project, .back").fadeIn(2000);
+			$('html, body').animate({scrollTop: 0 }, 400);
+			$("#container").addClass( projectName + "-border");
+		});
 	});
 
 	$(".back").on("click", function(){
