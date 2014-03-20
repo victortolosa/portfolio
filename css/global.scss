@@ -35,30 +35,30 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 .header {
 	position:relative;
 	width:100%;
-	height: 400px;
+	height: 500px;
 	background: darken(whitesmoke, 5%) url(../imgs/paper_fibers.png) repeat repeat;
 }
 .intro {
 	display:inline-block;
 	position: relative;
-	margin: 100px auto;
+	margin: 120px auto;
 	width: auto;
 	height:100px;
 	font-size:25px;
 	min-width:300px;
+	.title {
+		font-family: klinic-medium;
+		color: $turq;
+		margin-top: 10px;
+		background-color:transparent;
+		border: solid 3px $turq;
+	}
 	
 }
 .hello {
-	margin-left:0;
+	margin-left:10px;
 	line-height:45px;
 	margin-bottom: 5px;
-
-}
-.special {
-	color: darken(whitesmoke, 5%);
-	margin-top: 0;
-	float:left;
-	margin-left:-15px;
 
 }
 
@@ -69,6 +69,12 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	background: #333 url("../imgs/concrete-wall.png") repeat repeat;
 	float:left;
 	overflow: hidden;
+	h1 {
+		background-color: transparent;
+		color: $pink;
+		border: solid 3px $pink;
+		font-family: klinic-medium;
+	}
 	.wrap{
 		margin-top:100px;
 		padding-bottom:100px;
@@ -79,18 +85,24 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	}
 	
 }
-.me{
-	background-color:darken(pink, 15%);
-	color:#333;
-	font-family: klinic-medium;
-}
+
 .about{
 	width:100%;
 	height:100%;
-	background-color: darken(whitesmoke, 5%);
+	background: #fff url(../imgs/paper_fibers.png) repeat repeat;
 	float:left;
 	padding-bottom:150px;
+	hr{
+		border:none;
+		border-bottom: solid 1px $pink;
 
+	}
+	h1{ 
+	background-color: transparent;
+	color:$pink;
+	font-family: klinic-medium;
+	border: solid 3px $pink;
+}
 	p {
 		color: #333;
 		font-family: klinic-light;
@@ -100,11 +112,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 
 	}
 }
-.me{
-	background-color: $pink;
-	color:#333;
-	font-family: klinic-medium;
-}
+
 .allwork{
 	margin:0;padding:0;
 }
@@ -151,14 +159,15 @@ nav ul li {
 	height: 100%;
 	float:left;
 	.wrap{
-		max-width: 1000px;
+		width:100%;
 		margin-top:10%;
+	}
+	.contactme{
+		color:#fff;
+		border: solid 3px rgba(255,255,255, .5);
 	}
 }
 
-.contactme{
-	background-color:#fff;
-}
 
 label{float:left;}
 input{
@@ -292,26 +301,51 @@ input{
 	width:100px;
 	height:60px;
 	border:none;
-	background-color:darken(pink, 15%);
+	background-color: $pink;
+	border-bottom:solid 4px darken($pink, 5%);
+	margin-right:15px;
 
 }
 .details{
 	float:left;
 	width:100%;
-	background-color:$pink;
+	background: $pink;
 	padding:0;margin:0;
 	height:350px;
+	position:relative;
 	.wrap{
-		margin-top:50px;
+		margin-top:80px;
 	}
 	h1{
-		color:#333;
-		background-color: #fff;
+		transition: all 300ms;
+		cursor:pointer;
+		padding:10px;
+		display: inline-block;
+		width: auto;
+		color:#fff;
+		background-color: #444;
+		border-bottom: solid 4px #333;
+		&:hover{
+			background-color:#000;
+		}
 	}
 	p {
-		color:#333;
-		font-family:klinic-medium;
+		color:#fff;
+		font-family:klinic-light;
 		margin:0;padding:0;
+	}
+	&:before{
+
+		content:"";
+		display:block;
+		position:absolute;
+		width: 0; 
+		height: 0; 
+		left:50%;
+		margin-top:-20px;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		border-bottom: 20px solid $pink;
 	}
 }
 footer {
@@ -320,6 +354,13 @@ footer {
 	width:100%;
 	height:250px;
 	background:#333 url("../imgs/black-felt.png") repeat repeat;
+	.wrap {
+		width: 100%;
+		height:auto;
+		padding-top:100px;
+		margin:auto;
+		overflow:hidden;
+	}
 }
 svg {
 	display:block;
@@ -423,14 +464,15 @@ svg {
 
 .icon{
 	display: block;
-	width:250px;
+	width:290px;
 	height:100px;
-	padding-right:25px;
 	float:left;
 	cursor:pointer;
+	&:last-child{
+		width:200px;
+	}
 	@include breakpoint(medium){
 		width:200px;
-		
 	}
 	&:hover path{
 		fill: $turq;
@@ -450,13 +492,4 @@ svg {
 		margin-left:20px;
 		line-height:20px;
 	}
-}
-.icon-wrap{
-	width: 1100px;
-	height:auto;
-	padding-left:80px;
-	padding-top:100px;
-	margin:auto;
-	overflow:hidden;
-	
 }
