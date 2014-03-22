@@ -21,6 +21,7 @@ $turq: darken(turquoise, 10%);
 -moz-box-sizing: border-box;    /* Firefox, other Gecko */
 box-sizing: border-box;         /* Opera/IE 8+ */
 }
+
 #container {
 	width: 100%;
 	height: auto;
@@ -61,7 +62,6 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	background: darken(whitesmoke, 5%) url(../imgs/paper_fibers.png) repeat repeat;
 	.wrap{
 		height: 100%;
-		
 	}
 	.more {
 		font-family: fontawesome;
@@ -69,7 +69,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		color:#333;
 		position:absolute;
 		display: block;
-		font-size:50px;
+		font-size:2.5em;
 		width:50px;
 		left: 50%;
 		left: calc(50% - 20px);
@@ -90,7 +90,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	left:0;bottom:0;top:0;
 	width: 600px;
 	height:240px;
-	font-size:25px;
+	font-size:1.5em;
 	@include breakpoint(small){
 			width:100%;
 			line-height:30px;
@@ -237,7 +237,7 @@ nav ul li {
 	padding-right: 20px;
 	display: block;
 	float:left;
-	font-size:22px;
+	font-size: .7em;
 	border-right: solid 2px #333;
 	&:last-child{
 		border:none;
@@ -287,6 +287,7 @@ input{
 	height:auto;
 	float:left;
 	color:#fff;
+	font-size: 1.7em;
 	
 }
 .nameholder{
@@ -297,7 +298,7 @@ input{
 	outline:none;
 	border-color: #fff;
 	border-bottom: solid 3px rgba(255,255,255,1);
-	font-size:30px;
+	
 	background-color: rgba(0,0,0,0);
 	width: 100%;
 	height:60px;
@@ -328,7 +329,6 @@ input{
 	outline:none;
 	border-color: #fff;
 	border-bottom: solid 3px rgba(255,255,255,1);
-	font-size:30px;
 	background-color: rgba(0,0,0,0);
 	width: 100%;
 	height:60px;
@@ -356,7 +356,7 @@ input{
 	outline:none;
 	border-color: #fff;
 	border-bottom: solid 3px rgba(255,255,255,1);
-	font-size:30px;
+
 	background-color: rgba(0,0,0,0);
 	width: 100%;
 	height: 60px;
@@ -401,7 +401,6 @@ input{
 	color:#fff;
 	float:right;
 	font-family: klinic-medium;
-	font-size:20px;
 	background-color: #000;
 	width:100px;
 	height:60px;
@@ -474,6 +473,12 @@ input{
 	float:left;
 	width:100%;
 	height:400px;
+	@include breakpoint(xsmall){
+		height:600px;
+		}
+	@include breakpoint(medium){
+		height:500px;
+		}
 	background:#333 url("../imgs/black-felt.png") repeat repeat;
 	.wrap {
 		
@@ -486,12 +491,83 @@ input{
 		border: solid 3px $pink;
 		color:$pink;
 		margin-bottom:0;
+
 		@include breakpoint(small){
 			width:100%;
 			text-align:center;
 			padding:0;
 			margin:0 auto;
 		}
+	}
+	.iconwrap{
+	width:800px;
+	height: 100%;
+	margin: 80px auto;
+	padding:0;
+	padding-left:20px;
+	@include breakpoint(medium){
+		width:600px;
+	}
+	@include breakpoint(small){
+		width:400px;
+	}
+	@include breakpoint(xsmall){
+		width:300px;
+	}
+}
+	.icon{
+		display: block;
+		width:25%;
+		height:100px;
+		float:left;
+		cursor:pointer;
+		@include breakpoint(medium){
+			display:block;
+			width:50%;
+			margin:0;
+			
+		}
+		@include breakpoint(small){
+			display:block;
+			width:50%;
+			margin:0;
+			
+		}
+		@include breakpoint(xsmall){
+			width:80%;
+			margin-left:20%;
+		}
+		&:last-child{
+			width:150px;
+		}
+		&:hover path{
+			fill: $turq;
+			transition: all 300ms;
+			
+		}
+		&:hover h1{
+			color: $turq;
+			transition: all 300ms;
+			
+		}
+		&:hover i{
+			color: $turq;
+			transition: all 300ms;
+			
+		}
+		h1 {
+			color:#fff;
+			font-size:1.5em;
+			display:inline-block;
+			margin-left:20px;
+			line-height:20px;
+		}
+		i {
+			color:#fff;
+			font-size:3em;
+			float:left;
+		}
+	
 	}
 }
 svg {
@@ -528,7 +604,7 @@ svg {
 	text-shadow: 0 0 3px rgba(255,255,255,.3);
 	background-color:transparent;
 	i {
-	font-size: 60px;
+	font-size: 2em;
 	color:rgba(0,0,0,.9);
 	}
 	&:focus{
@@ -568,7 +644,7 @@ svg {
 
 	button{
 		font-family: klinic-medium;
-		font-size:30px;
+		font-size:1.8em;
 		border:none;
 		display:block;
 		width:420px;
@@ -589,6 +665,17 @@ svg {
 			background-color:#000;
 		}
 
+	}
+	.project-title {
+	  font-size: 1.8em;
+	  display:block;
+	  position: absolute;
+	  
+	  padding: 10px;
+	  padding-left: 20px;
+	  padding-right:20px;
+	  z-index:10000;
+	  
 	}
 }
 
@@ -654,58 +741,7 @@ svg {
 	color:#fff;
 }
 
-.iconwrap{
-	width:100%;
-	height: 100%;
-	margin: 80px auto;
-}
-.icon{
-	display: block;
-	width:300px;
-	height:100px;
-	float:left;
-	cursor:pointer;
-	&:last-child{
-		width:150px;
-	}
-	&:hover path{
-		fill: $turq;
-		transition: all 300ms;
-		
-	}
-	&:hover h1{
-		color: $turq;
-		transition: all 300ms;
-		
-	}
-	&:hover i{
-		color: $turq;
-		transition: all 300ms;
-		
-	}
-	h1 {
-		color:#fff;
-		font-size:25px;
-		display:inline-block;
-		margin-left:20px;
-		line-height:20px;
-	}
-	i {
-		color:#fff;
-		font-size:50px;
-		float:left;
-	}
-	@include breakpoint(small){
-			display:block;
-			width:50%;
-			margin:0;
-			
-		}
-	@include breakpoint(xsmall){
-			width:80%;
-			margin-left:20%;
-		}
-}
+
 
 i.uptop{
 	display:block;
@@ -715,7 +751,7 @@ i.uptop{
 	bottom:0;right:0;
 	margin:60px;
 	color:#000;
-	font-size: 50px;
+	font-size: 2em;
 	transition: color 300ms;
 	border-radius: 7px;
 	height:40px;
@@ -734,9 +770,9 @@ footer {
 	color:#fff;
 
 	.wrap{
-		padding-top:35px;
+		padding-top:38px;
 		a {
-			font-size:20px;
+			font-size:1.2em;
 			font-family: klinic-light;
 			color:#555;
 			&:hover{
@@ -766,15 +802,15 @@ footer {
 		float:left;
 		width:100%;
 		height:24px;
-		font-size:20px;
+		font-size:1.2em;
 		color:#555;
 		&:last-child{
-			font-size:18px;
+			font-size:1.2em;
 		}
 	}
 	i{
 		color: #444;
-		font-size:17px;
+		font-size:1.4em;;
 	}
 
 }
