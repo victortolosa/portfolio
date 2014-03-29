@@ -13,14 +13,15 @@
 	<div id="container">
 		<div class="main">
 		<section class="header">
-			<div class="wrap">
-			<nav>
+		<nav>
+			<span class="navicon">|||</span>
 			<ul>
 				<li><a href="#" class="towork">Work</a></li>
 				<li><a href="#" class="toabout">About Me</a></li>
 				<li><a href="#" class="tocontact">Contact</a></li>
 			</ul>
-			</nav>
+		</nav>
+			<div class="wrap">
 			<span class="intro">
 			<h1 class="hello"> Hello There,
 			<br> I'm Victor Tolosa</h1>
@@ -220,6 +221,12 @@
 		$("button").fadeOut();
 	});
 
+	$(".navicon").on("click", function(){
+		$(".navicon").toggleClass("navactive");
+		$("nav ul").fadeToggle();
+
+	});
+
 	function upTop(){
 		if($(window).scrollTop() > 1000){
 			$(".uptop").fadeIn();
@@ -227,13 +234,15 @@
 			$(".uptop").fadeOut();
 		}
 	}
-	function navColor(){
-		if ($(window).scrolltop() > 400) {
-			$("nav").addClass("nav-white");
-		}
-	}
+	
 	$(window).scroll( function(){
 		upTop();
+	});
+
+	$(window).resize( function(){
+		if( $(window).width() > 900 ){
+			$('nav ul').fadeIn();
+		}
 	});
 	</script>
 </body>
