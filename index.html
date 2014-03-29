@@ -86,7 +86,7 @@
 		</section>
 	
 		<section class="social">
-		<div class="wrap">
+		<div class="wrap"> 
 		<h1 class="title">Follow Me</h1>
 		<div class="iconwrap">
 		<div class="icon">
@@ -220,15 +220,20 @@
 		$("button").fadeOut();
 	});
 
-	function checkScroll(){
+	function upTop(){
 		if($(window).scrollTop() > 1000){
 			$(".uptop").fadeIn();
 		} else {
 			$(".uptop").fadeOut();
 		}
 	}
+	function navColor(){
+		if ($(window).scrolltop() > 400) {
+			$("nav").addClass("nav-white");
+		}
+	}
 	$(window).scroll( function(){
-		checkScroll();
+		upTop();
 	});
 	</script>
 </body>

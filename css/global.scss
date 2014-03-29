@@ -142,8 +142,8 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		}
 	}
 	.wrap{
-		margin-top:150px;
-		padding-bottom:250px;
+		padding-top:100px;
+		padding-bottom:120px;
 	}
 	p {
 		color: #000;
@@ -179,9 +179,9 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		color: #333;
 		font-family: klinic-light;
 	}
-	.wrap {
-		margin-top:10%;
-
+	.wrap{
+		padding-top:100px;
+		padding-bottom:100px;
 	}
 }
 
@@ -215,22 +215,12 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 
 nav ul {
 	z-index:10;
-	position: absolute;
+	position: fixed;
 	right:0;
 	width:400px;
 	height:60px;
 	padding: 30px  0  0; margin:0;
-
-	@include breakpoint(medium){
-		position:inherit;
-		margin:auto;
-		padding-top:30px;
-		
-	}
-
-}
-
-nav ul li {
+	li {
 	margin:0; padding:0;
 	position:relative;
 	padding-left:20px;
@@ -251,6 +241,24 @@ nav ul li {
 	}
 }
 
+	@include breakpoint(medium){
+		position:inherit;
+		margin:auto;
+		padding-top:30px;
+		
+	}
+
+}
+.nav-white{
+	background-color:#fff;
+	color:#000;
+	}
+.nav-black{
+	background-color:#000;
+	color:#fff;
+}
+
+
 .contact{
 	background: darken(turquoise, 10%) url("../imgs/concrete-wall.png") repeat repeat;
 	width:100%;
@@ -258,8 +266,8 @@ nav ul li {
 	height: 100%;
 	float:left;
 	.wrap{
-		
-		margin-top:10%;
+		padding-top:100px;
+		padding-bottom:100px;
 	}
 	.contactme{
 		color:#fff;
@@ -423,7 +431,9 @@ input{
 	position:relative;
 	padding-bottom: 40px;
 	.wrap{
-		margin-top:80px;
+		padding-top:100px;
+		padding-bottom:60px;
+	
 	}
 	h1{
 		display:block;
@@ -475,12 +485,9 @@ input{
 	height: auto;
 	padding-bottom:100px;
 	background:#333 url("../imgs/black-felt.png") repeat repeat;
-	.wrap {
-		
-		height:100%;
-		
-		margin: 50px auto;
-		
+	.wrap{
+		padding-top:100px;
+		padding-bottom:100px;
 	}
 	.title{
 		border: solid 3px $pink;
@@ -615,6 +622,7 @@ svg {
 	width: 100%;
 	float:left;
 	display:none;
+
 	.categories{
 		font-size:1.4em;
 		margin-top: 360px;
@@ -706,11 +714,16 @@ svg {
 .project-content{
 	width:100%;
 	max-width:1200px;
+	height: auto;
 	margin: 0 auto;
-	padding:100px;
+	padding:40px;
+	padding-top:100px;
+	padding-bottom:150px;
+	overflow:auto;
 	@include breakpoint(medium){
 		padding:40px;
 		padding-top:100px;
+		
 	}
 }
 
@@ -820,4 +833,21 @@ footer {
 		font-size:1.4em;;
 	}
 
+}
+
+.next{
+	width: 100%;
+	background-color:#eee;
+	height:100px;
+	text-align:center;
+	bottom:0;right:0;left:0;
+	margin-top:100px;
+	cursor:pointer;
+	h1{
+		padding-top:30px;
+	}
+	&:hover{
+		transition: all 500ms;
+		background-color: #ddd;
+	}
 }
