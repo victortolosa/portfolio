@@ -45,7 +45,7 @@
 					<h1>Bike Now</h1>
 					<small>Categories: Art Direction, Web Design, Web Development </small>
 					<p> A redesign and rebranding of a local internet radio station. </p>
-					<button class="item" id="bikenow">View Project</button>
+					<button class="projectbutton" id="bikenow">View Project</button>
 					</figcaption>
 					</figure>
 
@@ -232,14 +232,13 @@
 </div>
 <script src="js/production.min.js"></script>
 	<script>
-	$('.item').on("mouseenter", function(){
+	$('.projectbutton').on("mouseenter", function(){
 		var projectName = $(this).attr('id');
 		$(".project").fadeOut().empty();
-		$( ".project" ).load( "projects/" + projectName + ".html", function(){
-		});
+		$( ".project" ).load( "projects/" + projectName + ".html");
 	});
 
-	$('.item').on("click", function(){
+	$('.projectbutton').on("click", function(){
 			$(".main").fadeOut();
 			$(".project, .back").fadeIn(2000);
 			$('html, body').animate({scrollTop: 0 }, 400);
