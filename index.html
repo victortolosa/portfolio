@@ -239,10 +239,12 @@
 	});
 
 	$('.projectbutton').on("click", function(){
+		var projectName = $(this).attr('id');
 			$(".main").fadeOut();
 			$(".project, .back").fadeIn(2000);
 			$('html, body').animate({scrollTop: 0 }, 400);
 			$("#container").addClass( projectName + "-border");
+			
 		
 	});
 
