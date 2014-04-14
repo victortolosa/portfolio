@@ -234,6 +234,7 @@
 	<script>
 	$('.item').on("mouseenter", function(){
 		var projectName = $(this).attr('id');
+		$(".project").fadeOut().empty();
 		$( ".project" ).load( "projects/" + projectName + ".html", function(){
 		});
 	});
@@ -250,7 +251,6 @@
 		$(".back").hide();
 		$(".project").fadeOut().empty();
 		$("#container").removeClass();
-
 		$(".main").fadeIn();
 		$('html, body').animate({ scrollTop: $(".work").offset().top }, 400);
 		
