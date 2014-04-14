@@ -70,6 +70,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		transition: color 300ms;
 		cursor:pointer;
 	}
+	
 	nav {
 		z-index:10000;
 		display: block;
@@ -79,9 +80,26 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		height:60px;
 		color:#fff;
 		.logo{
+			position:relative;
+			z-index:100;
 			display:none;
 			width: 30px;
 			margin-top:17px;
+			cursor:pointer;
+		}
+		.logo-name{
+			font-family: klinic-medium;
+			color:transparent;
+			position: absolute;
+			left:0;
+			top:0;
+			margin:16px 0;padding:0;
+			font-size:1.5em;
+			transition:all 300ms;
+		}
+		.show{
+			color:#fff;
+			padding-left:35px;
 		}
 		ul {
 			width:380px;
@@ -90,6 +108,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 			line-height:12px;
 			text-align:right;
 			li{
+
 				padding:0;
 				font-size: .7em;
 				padding-left:20px;
@@ -98,6 +117,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 				display:inline;
 			}
 			a {
+				font-family: klinic-medium;
 				color: #fff;
 			}
 			@include breakpoint(medium){
@@ -162,6 +182,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 .work{
+	position: relative;
 	height: 80%;
 	width:100%;
 	height: auto;
@@ -169,6 +190,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	float:left;
 	overflow: hidden;
 	.wrap{
+		position:relative;
 		padding-top:100px;
 		padding-bottom:120px;
 		margin:0 auto;
@@ -181,6 +203,11 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	}
 
 	figure{
+		position:relative;
+		float:left;
+		width:100%;
+		height: auto;
+		margin-bottom:90px;
 		img{
 			float:left;
 			width: 60%;
@@ -188,13 +215,19 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		&:nth-child(even) img{
 			float:right;
 		}
-		&:nth-child(odd) figcaption{
-			float:left;
-			padding-right:20px;
+		&:nth-child(even) figcaption{
+			right:auto;
+			left:0;
 		}
 		figcaption{
-			float:right;
-			display:block;
+			position:absolute;
+			margin: auto;
+			right:0;
+			left: auto;
+			top:0;
+			bottom:0;
+
+			height:300px;
 			width:35%;
 			width:calc( 40% - 20px);
 			padding-left:20px;
@@ -202,8 +235,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 				padding:0;
 				margin:0;
 			}
-			small{ 
-
+			small{
 				font-size:1em;
 			}
 			p{
@@ -217,14 +249,17 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 			transition: all 500ms;
 			height: 60px;
 			color:#333;
+			background-color: transparent;
+			border: solid 2px #333;
+			outline:none;
 		}
 		figcaption button:hover{
-			border: solid 2px #333;
+		
 			background-color:transparent;
 			transition: all 500ms;
 			color:#fff;
 			background-color:#333;
-			border: solid 2px #333;
+			
 		}
 	}
 }
@@ -232,7 +267,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 .about{
 	width:100%;
 	height:100%;
-	background: #fff url(../imgs/paper_fibers.png) repeat repeat;
+	background: #000 url(../imgs/paper_fibers.png) repeat repeat;
 	float:left;
 	padding-bottom:10%;
 	hr{
@@ -242,9 +277,9 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	}
 	.title{ 
 	background-color: transparent;
-	color:$turq;
+	color:$pink;
 	font-family: klinic-medium;
-	border: solid 3px $turq;
+	border: solid 3px $pink;
 	@include breakpoint(small){
 			width:100%;
 			text-align:center;

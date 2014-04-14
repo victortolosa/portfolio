@@ -23,6 +23,7 @@
 			</ul>
 			
 			<img class="logo" src="imgs/svg/logo.svg" alt="personal logo">
+			<p class="logo-name"> Victor Tolosa </p>
 			</div>
 		</nav>
 			<div class="wrap">
@@ -276,6 +277,14 @@
 		logoToggle();
 	});
 
+	$('.logo').on("mouseenter", function(){
+		$(".logo-name").addClass("show");
+
+	});
+
+	$('.logo').on("mouseleave", function(){
+		$(".logo-name").removeClass("show");
+	});
 	</script>
 </body>
 </html>
