@@ -47,26 +47,19 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		}
 }
 
-@keyframes glow
-{
-	0%{ color:#333;}
-	50%{ color: darken($turq, 18%); }
-	0%{ color:#333;}
-}
 .header {
 	position:relative;
 	width:100%;
-	height: 600px;
-	min-height:500px;
-	height:60vh;
-	background: darken(whitesmoke, 5%) url(../imgs/paper_fibers.png) repeat repeat;
+	min-height:0;
+	height:350px;
+	background: darken(turquoise, 10%);
 	.wrap{
 		height: 100%;
 	}
 	.more {
 		font-family: fontawesome;
 		content:"\f13a";
-		color:#333;
+		color:#fff;
 		position:absolute;
 		display: block;
 		font-size:2.5em;
@@ -76,14 +69,67 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		bottom:10px;
 		transition: color 300ms;
 		cursor:pointer;
-		animation: glow 2s infinite;
-		&:hover{
-			-webkit-animation: 0;
-			color:$turq;
+	}
+	nav {
+		z-index:10000;
+		display: block;
+		position: fixed;
+		left:0;right:0;
+		width:100%;
+		height:60px;
+		color:#fff;
+		.logo{
+			display:none;
+			width: 30px;
+			margin-top:17px;
 		}
-
+		ul {
+			width:380px;
+			float:right;
+			margin-top:20px;
+			line-height:12px;
+			text-align:right;
+			li{
+				padding:0;
+				font-size: .7em;
+				padding-left:20px;
+				padding-right:0;
+				margin:0;
+				display:inline;
+			}
+			a {
+				color: #fff;
+			}
+			@include breakpoint(medium){
+				display:none;
+			}
+		}
+	}
+	.navicon{
+		z-index:10000;
+		right:0;top:0;
+		position: fixed;
+		display: none;
+		line-height:45px;
+		font-size:25px;
+		text-align:center;
+		width:50px;
+		height:50px;
+		color:#fff;
+		background-color:#333;
+		transform: rotate(90deg);
+		margin:20px;
+		cursor:pointer;
+		transition: all 500ms;
+		&:hover{
+		}
+		@include breakpoint(medium){
+			display: block;
+		}
 	}
 }
+
+
 .intro {
 	position: absolute;
 	margin: auto;
@@ -92,64 +138,95 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	height:240px;
 	font-size:1.5em;
 	@include breakpoint(small){
-			width:100%;
-			line-height:30px;
-
-		
-		}
+		width:100%;
+		line-height:30px;
+	}
+	.hello {
+		color:#fff;
+		margin-left:10px;
+		line-height:45px;
+		margin-bottom: 5px;
+	}
 	.title {
 		font-family: klinic-medium;
-		color: $turq;
+		color: #fff;
 		margin-top: 10px;
 		background-color:transparent;
-		border: solid 3px $turq;
+		border: solid 3px #fff;
 		@include breakpoint(small){
 			width:95%;
 			text-align:center;
-		
 			margin:10px;
-		
 		}
 	}
-
-	
-}
-.hello {
-	margin-left:10px;
-	line-height:45px;
-	margin-bottom: 5px;
-
 }
 
 .work{
 	height: 80%;
 	width:100%;
 	height: auto;
-	background: #333 url("../imgs/concrete-wall.png") repeat repeat;
+	background: #fff url("../imgs/concrete-wall.png") repeat repeat;
 	float:left;
 	overflow: hidden;
-	.title {
-		background-color: transparent;
-		color: $pink;
-		border: solid 3px $pink;
-		font-family: klinic-medium;
-		@include breakpoint(small){
-			width:100%;
-			text-align:center;
-			padding:0;
-			margin:0 auto;
-			margin-bottom:20px;
-		}
-	}
 	.wrap{
 		padding-top:100px;
 		padding-bottom:120px;
+		margin:0 auto;
+		padding:0;
+		padding-top:40px;
 	}
-	p {
-		color: #000;
-		font-family: klinic-light;
-	}
+	.title {
+		color:$pink;
 	
+	}
+
+	figure{
+		img{
+			float:left;
+			width: 60%;
+		}
+		&:nth-child(even) img{
+			float:right;
+		}
+		&:nth-child(odd) figcaption{
+			float:left;
+			padding-right:20px;
+		}
+		figcaption{
+			float:right;
+			display:block;
+			width:35%;
+			width:calc( 40% - 20px);
+			padding-left:20px;
+			h1{
+				padding:0;
+				margin:0;
+			}
+			small{ 
+
+				font-size:1em;
+			}
+			p{
+				font-size:1.4em;
+			}
+		}
+	
+		figcaption button{
+			margin:0 auto;
+			width: 90%;
+			transition: all 500ms;
+			height: 60px;
+			color:#333;
+		}
+		figcaption button:hover{
+			border: solid 2px #333;
+			background-color:transparent;
+			transition: all 500ms;
+			color:#fff;
+			background-color:#333;
+			border: solid 2px #333;
+		}
+	}
 }
 
 .about{
@@ -185,131 +262,6 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	}
 }
 
-.allwork{
-	margin:0;padding:0;
-}
-.item{
-	margin:0;
-	display: relative;
-	padding:10px;
-	-webkit-transition: all 300ms;
-	width: calc(25% - 5px);
-	cursor:pointer;
-	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
-	filter: grayscale(100%);
-	transition: all 300ms;
-	@include breakpoint(medium){
-		width:calc(50% - 5px);
-		
-	}
-	@include breakpoint(small){
-		width: 100%;
-		
-	}
-	&:hover{
-		padding:5px;
-		filter: none;
-		transition: all 300ms;
-	}
-}
-
-nav {
-	z-index:10000;
-	display: block;
-	position: fixed;
-	left:0;right:0;
-	width:100%;
-	height:80px;
-	background-color: rgba(255,255,255, .5);
-	@include breakpoint(medium){
-		background-color:transparent;
-		display: block;
-	}
-	ul {
-		width:400px;
-		float:right;
-		line-height:12px;
-	
-		li{
-			padding:0;
-			font-size: .7em;
-			padding-right:30px;
-			display:inline;
-
-		}
-		a {
-			color: #333;
-		}
-		@include breakpoint(medium){
-		display:none;
-		}
-	}
-
-}
-
-/*
-
-nav ul {
-	z-index:10;
-	position: fixed;
-	right:0;
-	width:400px;
-	height:60px;
-	padding: 30px  0  0; margin:0;
-	@include breakpoint(medium){
-		display:none;
-	}
-	li {
-	margin:0; padding:0;
-	position:relative;
-	padding-left:20px;
-	padding-right: 20px;
-	display: block;
-	float:left;
-	font-size: .7em;
-	border-right: solid 2px #333;
-	&:last-child{
-		border:none;
-	}
-	a {
-		color:#333;
-		padding: 10px;
-		&:hover{
-			color:$turq;
-		}
-	}
-
-}
-}
-*/
-.navicon{
-		z-index:10000;
-		right:0;top:0;
-		position: fixed;
-		display: none;
-		line-height:45px;
-		font-size:25px;
-		text-align:center;
-		width:50px;
-		height:50px;
-		color:#fff;
-		background-color:#333;
-		transform: rotate(90deg);
-		margin:20px;
-		cursor:pointer;
-		transition: all 500ms;
-		&:hover{
-		
-		}
-		@include breakpoint(medium){
-			display: block;
-		}
-}
-
-.navactive{
-	background-color:transparent;
-	color:#333;
-}
 
 
 
@@ -905,3 +857,56 @@ footer {
 		background-color: #ddd;
 	}
 }
+
+.work .title, .about .title, h1.title .contactme, .social .title{
+			border:none;
+			font-size:2.5em;
+		}
+		
+		.back{
+
+			font-size:1em;
+			width:30px;
+			height:30px;
+			padding:0;
+			margin-right:25px;
+			margin-top:25px;
+			background-color:transparent;
+			z-index:10000;
+			color:#fff;
+		}
+		.back:hover{
+			color:#ddd;
+		}
+		i.uptop{
+			font-size:1.7em;
+			margin-bottom:20px;
+			margin-right:31px;
+
+		}
+		.project-content p.categories {
+			font-size:1.1em;
+		}
+		.project-content .wrap {
+			max-width:900px;
+			padding-left:80px;
+			padding-right:80px;
+		}
+		
+		.project-content p{
+			font-size:1.3em;
+			
+			padding:10px;
+		
+			padding-right:100px;
+			padding-bottom:0;
+			padding-top:0;
+			display:block;
+			
+		}
+		.project-content img{
+			border:none;
+		}
+		.about p{
+			font-size:1.6em;
+		}

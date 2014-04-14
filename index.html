@@ -5,21 +5,25 @@
 	<title>Portfolio</title>
 	<link rel="stylesheet" href="css/build.prefixed.css" type="text/css">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	
+
 
 </head>
 <body>	
-	<button class="back"><i class="fa fa-reply"></i></button>
+	<button class="back"><i class="fa fa-times-circle-o"></i></button>
 	<div id="container">
 		<div class="main">
 		<section class="header">
 		<nav>
+		<div class="wrap">
 			<span class="navicon">|||</span>
 			<ul>
 				<li><a href="#" class="towork">Work</a></li>
 				<li><a href="#" class="toabout">About Me</a></li>
 				<li><a href="#" class="tocontact">Contact</a></li>
 			</ul>
+			
+			<img class="logo" src="imgs/svg/logo.svg" alt="personal logo">
+			</div>
 		</nav>
 			<div class="wrap">
 			<span class="intro">
@@ -27,22 +31,46 @@
 			<br> I'm Victor Tolosa</h1>
 			<h1 class="title">Web &amp; Graphic Designer</h1>
 			</span>
-			<i class="fa fa-chevron-circle-down more"></i>
+			<!--<i class="fa fa-chevron-circle-down more"></i>-->
 		</div>
 		</section>
 		<div class="work">
 			<div class="wrap">
-				<h1 class="light title me">Recent Work</h1>
+				<h1 class="title">Recent Work</h1>
 				<div id="allwork">
-					<img src="imgs/projects/somafm-tile.png" class="item" id="somafm" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/projects/sterngrove-tile.png" class="item" id="sterngrove" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/projects/bikenow-tile.png" class="item" id="bikenow" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/projects/infanta-tile.png" class="item" id="infanta" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/projects/seamless-tile.png" class="item" id="seamless" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/projects/bestbay-tile.png" class="item" id="bestbay" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/projects/negativespace-tile.png" class="item" id="negativespace" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/projects/coffee-tile.png" class="item" id="coffee" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
-					<img src="imgs/projects/listitem-tile.png" class="item" id="listitem" data-bottom-top=" opacity: 0; " data-bottom="opacity: 1;" >
+					<figure>
+					<img src="imgs/projectmockups/bikenow.png">
+					<figcaption>
+					<h1>Bike Now</h1>
+					<small>Categories: Art Direction, Web Design, Web Development </small>
+					<p> A redesign and rebranding of a local internet radio station. </p>
+					<button class="item" id="bikenow">View Project</button>
+					</figcaption>
+					</figure>
+
+					<figure>
+					<img src="imgs/mockup1.png">
+					<figcaption>
+					<h1>Soma FM</h1>
+					<button>View Project</button>
+					</figcaption>
+					</figure>
+
+					<figure>
+					<img src="imgs/mockup1.png">
+					<figcaption>
+					<h1>Soma FM</h1>
+					<button>View Project</button>
+					</figcaption>
+					</figure>
+
+					<figure>
+					<img src="imgs/mockup1.png">
+					<figcaption>
+					<h1>Soma FM</h1>
+					<button>View Project</button>
+					</figcaption>
+					</figure>
 				</div>
 			</div>
 		</div>
@@ -58,7 +86,7 @@
 		</div>
 		<section class="details">
 			<div class="wrap">
-				<h1>Download My Resume</h1>
+				<h1>View My Resumé</h1>
 				<h1>Visit My LinkedIn</h1>
 			</div>
 		</section>
@@ -214,18 +242,15 @@
 	});
 
 	$(".back").on("click", function(){
+		$(".back").hide();
 		$(".project").fadeOut().empty();
 		$("#container").removeClass();
+
 		$(".main").fadeIn();
 		$('html, body').animate({ scrollTop: $(".work").offset().top }, 400);
-		$("button").fadeOut();
+		
 	});
 
-	$(".navicon").on("click", function(){
-		$(".navicon").toggleClass("navactive");
-		$("nav ul").fadeToggle();
-
-	});
 
 	function upTop(){
 		if($(window).scrollTop() > 1000){
@@ -234,16 +259,23 @@
 			$(".uptop").fadeOut();
 		}
 	}
+	function logoToggle(){
+		if($(window).scrollTop() > 250){
+			$(".logo").fadeIn();
+			$("nav").css("background-color", "rgba(33, 204, 187, .9)");
+			$(".back i").css("color", "black");
+		} else {
+			$(".logo").fadeOut();
+			$("nav").css("background-color", "rgba(33, 204, 187, 0)");
+			$(".back i").css("color", "white");
+		}
+	}
 	
 	$(window).scroll( function(){
 		upTop();
+		logoToggle();
 	});
 
-	$(window).resize( function(){
-		if( $(window).width() > 900 ){
-			$('nav ul').fadeIn();
-		}
-	});
 	</script>
 </body>
 </html>
