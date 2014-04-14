@@ -199,7 +199,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	}
 	.title {
 		color:$pink;
-	
+		font-size: 2em;
 	}
 
 	figure{
@@ -267,28 +267,28 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 .about{
 	width:100%;
 	height:100%;
-	background: #000 url(../imgs/paper_fibers.png) repeat repeat;
+	background: #333 url("../imgs/concrete-wall.png")repeat repeat;
 	float:left;
 	padding-bottom:10%;
+	color:#fff;
 	hr{
 		border:none;
-		border-bottom: solid 1px $turq;
+		border-bottom: solid 1px $pink;
 
 	}
 	.title{ 
 	background-color: transparent;
 	color:$pink;
 	font-family: klinic-medium;
-	border: solid 3px $pink;
 	@include breakpoint(small){
 			width:100%;
 			text-align:center;
 			padding:0;
 			margin:0 auto;
 		}
-}
+	}
 	p {
-		color: #333;
+		color: #fff;
 		font-family: klinic-light;
 	}
 	.wrap{
@@ -307,17 +307,17 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	height: 100%;
 	float:left;
 	.wrap{
+
 		padding-top:100px;
 		padding-bottom:100px;
 	}
-	.contactme{
+	.title{
 		color:#fff;
-		border: solid 3px #fff;
 		@include breakpoint(small){
-			width:100%;
-			text-align:center;
-			padding:0;
-			margin:0 auto;
+		width:100%;
+		text-align:center;
+		padding:0;
+		margin:0 auto;
 		}
 	}
 }
@@ -329,14 +329,14 @@ input{
 
 }
 .nameholder,.emailholder,.messageholder{
-	margin-left: -15px;
-	display: inline-block;
+	font-family: klinic-thin;
+	display: block;
 	width:100%;
 	min-width:300px;
 	height:auto;
 	float:left;
 	color:#fff;
-	font-size: 1.7em;
+	font-size: 1.3em;
 	
 }
 .nameholder{
@@ -531,7 +531,7 @@ input{
 		padding-bottom:100px;
 	}
 	.title{
-		border: solid 3px $pink;
+		
 		color:$pink;
 		margin-bottom:0;
 
@@ -893,10 +893,7 @@ footer {
 	}
 }
 
-.work .title, .about .title, h1.title .contactme, .social .title{
-			border:none;
-			font-size:2.5em;
-		}
+
 		
 		.back{
 
