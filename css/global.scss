@@ -482,52 +482,48 @@ input{
 	position:relative;
 	padding-bottom: 40px;
 	.wrap{
-		padding-top:100px;
-		padding-bottom:60px;
-	
+		overflow:hidden;
+		padding-bottom:75px;
 	}
-	h1{
-		display:block;
-		width:420px;
-		margin: 0 auto;
-		margin-bottom: 40px;
-		
-		transition: all 300ms;
+	figure {
 		cursor:pointer;
-		padding: 10px;
-		padding-left:20px;
-		padding-right:20px;
-		text-align:center;
+		margin:0;padding:0;
+		width:50%;
+		float:left;
 		color:#fff;
-		background-color: #444;
-		border-bottom: solid 4px #333;
-
+		transition:all 1s;
 		&:hover{
-			background-color:#000;
+			color:black;
+			
+			transition:all 1s;
+		}
+		&:hover img{
+			
+			opacity:1;
+			
+		}
+
+	}
+	figure img{
+		float:left;
+		display:block;
+		margin:35%;
+		margin-bottom:30px;
+		margin-left:34%;
+		&:path{
+			fill:blue;
 		}
 	}
-	p {
-		padding: 10px;
-		padding-left:20px;
-		padding-right:20px;
-		display: block;
-		margin: 0 auto;
-		width: 340px;
-
-	}
-	&:before{
-
-		content:"";
+	figcaption{
 		display:block;
-		position:absolute;
-		width: 0; 
-		height: 0; 
-		left:calc(50% - 20px);
-		margin-top:-20px;
-		border-left: 20px solid transparent;
-		border-right: 20px solid transparent;
-		border-bottom: 20px solid $pink;
+		margin:0;padding:0;
+		width:100%;
+		height:auto;
+		font-size:1em;
+		text-align:center;
+
 	}
+
 }
 .social {
 	display:block;
