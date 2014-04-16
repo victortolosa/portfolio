@@ -23,6 +23,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 #container {
+
 	width: 100%;
 	height: auto;
 	position:relative;
@@ -192,6 +193,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	float:left;
 	overflow: hidden;
 	.wrap{
+		overflow:hidden;
 		position:relative;
 		padding-top:100px;
 		padding-bottom:120px;
@@ -211,6 +213,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		height: auto;
 		margin-bottom:90px;
 		img{
+			margin-left:-20px;
 			float:left;
 			width: 60%;
 		}
@@ -232,7 +235,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 			height:300px;
 			width:35%;
 			width:calc( 40% - 20px);
-			padding-left:20px;
+			padding-right:30px;
 			h1{
 				padding:0;
 				margin:0;
@@ -246,6 +249,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		}
 	
 		figcaption button{
+			font-size:1.5em;
 			margin:0 auto;
 			width: 90%;
 			transition: all 500ms;
@@ -480,11 +484,25 @@ input{
 	padding:0;margin:0;
 	height: auto;
 	position:relative;
-	padding-bottom: 40px;
-	.wrap{
-		overflow:hidden;
-		padding-bottom:75px;
+	&:after{
+			display:block;
+			position:absolute;
+			bottom:-20px;left:0; right:0; top: auto;
+			margin: auto;
+			content:"";
+			width: 0; 
+			height: 0; 
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			border-top: 20px solid $pink;
 	}
+	.wrap{
+		position:relative;
+		padding-top: 75px;
+		padding-bottom:50px;
+		
+	}
+	
 	figure {
 		cursor:pointer;
 		margin:0;padding:0;
@@ -507,9 +525,11 @@ input{
 	figure img{
 		float:left;
 		display:block;
-		margin:35%;
-		margin-bottom:30px;
+		padding:0;
+		margin:40%;
+		margin-bottom:20px;
 		margin-left:34%;
+		margin-top:0;
 		&:path{
 			fill:blue;
 		}
@@ -519,8 +539,9 @@ input{
 		margin:0;padding:0;
 		width:100%;
 		height:auto;
-		font-size:1em;
+		font-size:.8em;
 		text-align:center;
+		padding-bottom:30px;
 
 	}
 
@@ -532,6 +553,7 @@ input{
 	height: auto;
 	background:#333 url("../imgs/black-felt.png") repeat repeat;
 	.wrap{
+		overflow:hidden;
 		padding-top:50px;
 		padding-bottom:75px;
 	}
