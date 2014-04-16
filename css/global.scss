@@ -231,20 +231,26 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 			left: auto;
 			top:0;
 			bottom:0;
-
 			height:300px;
 			width:35%;
 			width:calc( 40% - 20px);
+			min-width:250px;
 			padding-right:30px;
 			h1{
 				padding:0;
 				margin:0;
+				margin-bottom:10px;
+
 			}
 			small{
 				font-size:1em;
+				
+
 			}
 			p{
+				margin-top:10px;
 				font-size:1.4em;
+
 			}
 		}
 	
@@ -254,8 +260,8 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 			width: 90%;
 			transition: all 500ms;
 			height: 60px;
-			color:#333;
-			background-color: transparent;
+			color:#fff;
+			background-color: #333;
 			border: solid 2px #333;
 			outline:none;
 		}
@@ -263,8 +269,8 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		
 			background-color:transparent;
 			transition: all 500ms;
-			color:#fff;
-			background-color:#333;
+			color:#333;
+
 			
 		}
 	}
@@ -498,7 +504,8 @@ input{
 	}
 	.wrap{
 		position:relative;
-		padding-top: 75px;
+		overflow:hidden;
+		padding-top: 100px;
 		padding-bottom:50px;
 		
 	}
@@ -509,11 +516,11 @@ input{
 		width:50%;
 		float:left;
 		color:#fff;
-		transition:all 1s;
-		&:hover{
-			color:black;
+		
+		&:hover figcaption h1{
+			opacity:1;
 			
-			transition:all 1s;
+			transition:all 600ms;
 		}
 		&:hover img{
 			
@@ -530,18 +537,21 @@ input{
 		margin-bottom:20px;
 		margin-left:34%;
 		margin-top:0;
-		&:path{
-			fill:blue;
-		}
 	}
 	figcaption{
 		display:block;
 		margin:0;padding:0;
 		width:100%;
 		height:auto;
-		font-size:.8em;
+		font-size:.7em;
 		text-align:center;
 		padding-bottom:30px;
+		h1 {
+			display:inline;
+			opacity:.5;
+			transition:all 300ms;
+
+		}
 
 	}
 
@@ -553,6 +563,7 @@ input{
 	height: auto;
 	background:#333 url("../imgs/black-felt.png") repeat repeat;
 	.wrap{
+		position:relative;
 		overflow:hidden;
 		padding-top:50px;
 		padding-bottom:75px;
