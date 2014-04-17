@@ -213,14 +213,13 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		float:left;
 		width:100%;
 		height: auto;
-		
 		margin-bottom:90px;
 		
 		img{
 			float:left;
 			width: 60%;
 			@include breakpoint(medium){
-				width:85%;
+				width:88%;
 			}
 			margin:0; padding:0;
 		}
@@ -278,15 +277,14 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	
 		figcaption button{
 			font-size:1.4em;
-			margin:0 auto;
-			width: 90%;
+			width: 95%;
+			margin: 0 auto;
 			transition: all 500ms;
 			height: 60px;
 			color:#fff;
 			background-color: #999;
 			border: none;
 			border-bottom: solid 4px #777;
-			outline:none;
 		}
 		figcaption button:hover{
 		
@@ -952,55 +950,53 @@ footer {
 	}
 }
 
+.back{
 
-		
-		.back{
+	font-size:1em;
+	width:30px;
+	height:30px;
+	padding:0;
+	margin-right:25px;
+	margin-top:25px;
+	background-color:transparent;
+	z-index:10000;
+	color:#fff;
+}
+.back:hover{
+	color:#ddd;
+}
+i.uptop{
+	font-size:1.7em;
+	margin-bottom:20px;
+	margin-right:31px;
 
-			font-size:1em;
-			width:30px;
-			height:30px;
-			padding:0;
-			margin-right:25px;
-			margin-top:25px;
-			background-color:transparent;
-			z-index:10000;
-			color:#fff;
-		}
-		.back:hover{
-			color:#ddd;
-		}
-		i.uptop{
-			font-size:1.7em;
-			margin-bottom:20px;
-			margin-right:31px;
+}
+.project-content p.categories {
+	font-size:1.1em;
+}
+.project-content .wrap {
+	max-width:900px;
+	padding-left:80px;
+	padding-right:80px;
+}
 
-		}
-		.project-content p.categories {
-			font-size:1.1em;
-		}
-		.project-content .wrap {
-			max-width:900px;
-			padding-left:80px;
-			padding-right:80px;
-		}
-		
-		.project-content p{
-			font-size:1.3em;
-			
-			padding:10px;
-		
-			padding-right:100px;
-			padding-bottom:0;
-			padding-top:0;
-			display:block;
-			
-		}
-		.project-content img{
-			border:none;
-		}
-		.about p{
-			font-size:1.6em;
-		}
+.project-content p{
+	font-size:1.3em;
+	
+	padding:10px;
+
+	padding-right:100px;
+	padding-bottom:0;
+	padding-top:0;
+	display:block;
+	
+}
+.project-content img{
+	border:none;
+}
+.about p{
+	font-size:1.6em;
+}
 
 @media only screen and (max-width: 71.25em) {
   figure {   font-size:1em; }
