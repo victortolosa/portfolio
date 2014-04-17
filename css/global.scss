@@ -89,7 +89,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 			margin-top:17px;
 			cursor:pointer;
 			@include breakpoint(medium){
-			
+				display:none;
 			}
 		}
 		.logo-name{
@@ -143,14 +143,11 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		color:#fff;
 		transform: rotate(90deg);
 		margin:7px;
-
 		cursor:pointer;
 		transition: all 500ms;
 		&:hover{
 		}
-		@include breakpoint(medium){
-			display: block;
-		}
+		
 	}
 }
 
