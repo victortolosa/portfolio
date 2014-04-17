@@ -227,6 +227,12 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 			width:61%;
 			float:right;
 			padding-right:30px;
+			@include breakpoint(medium){
+				float:left;
+				width:90%;
+				margin:0;
+				padding:0;
+			}
 
 		}
 		&:nth-child(even) figcaption{
@@ -247,7 +253,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 			@include breakpoint(medium){
 				position: relative;
 				float:left;
-				width:100%;
+				width:90%;
 				text-align:center;
 			}
 			h1{
@@ -269,21 +275,20 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		}
 	
 		figcaption button{
-			font-size:1.5em;
+			font-size:1.4em;
 			margin:0 auto;
 			width: 90%;
 			transition: all 500ms;
 			height: 60px;
 			color:#fff;
-			background-color: #333;
-			border: solid 2px #333;
+			background-color: #999;
+			border: none;
+			border-bottom: solid 4px #777;
 			outline:none;
 		}
 		figcaption button:hover{
 		
-			background-color:transparent;
-			transition: all 500ms;
-			color:#333;
+			
 
 			
 		}

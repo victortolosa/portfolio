@@ -16,7 +16,7 @@
 		<nav>
 		<div class="wrap">
 			<span class="navicon">|||</span>
-			<ul>
+			<ul class="navs">
 				<li><a href="#" class="towork">Work</a></li>
 				<li><a href="#" class="toabout">About Me</a></li>
 				<li><a href="#" class="tocontact">Contact</a></li>
@@ -302,9 +302,7 @@
 			$(".main").fadeOut();
 			$(".project, .back").fadeIn(2000);
 			$('html, body').animate({scrollTop: 0 }, 400);
-			$("#container").addClass( projectName + "-border");
-			
-		
+			$("#container").addClass( projectName + "-border");	
 	});
 
 	$(".back").on("click", function(){
@@ -313,10 +311,7 @@
 		$("#container").removeClass();
 		$(".main").fadeIn();
 		$('html, body').animate({ scrollTop: $(".work").offset().top }, 400);
-		
 	});
-
-
 	function upTop(){
 		if($(window).scrollTop() > 1000){
 			$(".uptop").fadeIn();
@@ -343,11 +338,13 @@
 
 	$('.logo').on("mouseenter", function(){
 		$(".logo-name").addClass("show");
-
 	});
-
 	$('.logo').on("mouseleave", function(){
 		$(".logo-name").removeClass("show");
+	});
+
+	$(".navicon").on("click", function(){
+		$(".navs").toggle();
 	});
 	</script>
 </body>
