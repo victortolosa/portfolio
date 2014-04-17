@@ -194,7 +194,6 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	overflow: hidden;
 	.wrap{
 		overflow:hidden;
-		position:relative;
 		padding-top:100px;
 		padding-bottom:120px;
 		margin:0 auto;
@@ -211,14 +210,19 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		float:left;
 		width:100%;
 		height: auto;
+		margin-left:30px;
 		margin-bottom:90px;
+		
 		img{
-			margin-left:-20px;
+			
 			float:left;
 			width: 60%;
 		}
 		&:nth-child(even) img{
+			width:61%;
 			float:right;
+			padding-right:30px;
+
 		}
 		&:nth-child(even) figcaption{
 			right:auto;
@@ -235,7 +239,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 			width:35%;
 			width:calc( 40% - 20px);
 			min-width:250px;
-			padding-right:30px;
+			
 			h1{
 				padding:0;
 				margin:0;
@@ -248,6 +252,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 
 			}
 			p{
+				max-width:380px;
 				margin-top:10px;
 				font-size:1.4em;
 
