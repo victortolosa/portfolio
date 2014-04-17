@@ -213,7 +213,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		float:left;
 		width:100%;
 		height: auto;
-		margin-left:30px;
+		
 		margin-bottom:90px;
 		
 		img{
@@ -222,6 +222,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 			@include breakpoint(medium){
 				width:85%;
 			}
+			margin:0; padding:0;
 		}
 		&:nth-child(even) img{
 			width:61%;
@@ -254,7 +255,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 				position: relative;
 				float:left;
 				width:90%;
-				text-align:center;
+				text-align:left;
 			}
 			h1{
 				padding:0;
