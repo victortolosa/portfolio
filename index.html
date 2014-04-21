@@ -348,4 +348,30 @@
 	function logoToggle(){
 		if($(window).scrollTop() > 250){
 			$(".logo").fadeIn();
-			$("
+			$("nav").css("background-color", "rgba(33, 204, 187, .9)");
+			$(".back i").css("color", "black");
+		} else {
+			$(".logo").fadeOut();
+			$("nav").css("background-color", "rgba(33, 204, 187, 0)");
+			$(".back i").css("color", "white");
+		}
+	}
+	
+	//check for logo and scroll
+	$(window).scroll( function(){
+		upTop();
+		logoToggle();
+	});
+
+	$('.logo').on("mouseenter", function(){
+		$(".logo-name").addClass("show");
+	});
+	$('.logo').on("mouseleave", function(){
+		$(".logo-name").removeClass("show");
+	});
+	$(".navicon").on("click", function(){
+		$(".navs").fadeToggle();
+	});
+	</script>
+</body>
+</html>
