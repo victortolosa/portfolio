@@ -288,16 +288,37 @@
 
 
 </div>
+
 <script src="js/production.min.js"></script>
-	<script>
-	$('.projectbutton').on("mouseenter", function(){
-		var projectName = $(this).attr('id');
+<script src="js/stack/jquery.history.js"></script>
+<script>
+	// Establish Variables
+	var State = History.getState(),
+	$log = $('#log');
+
+	// Log Initial State
+	History.log('initial:', State.data, State.title, State.url);
+
+	//check if at home
+	History.Adapter.bind(window,'statechange',function(){ 
+    var State = History.getState(); 
+    History.log(State.data, State.title, State.url);
+      if ( State = "?work"){
+    	$(".back").hide();
 		$(".project").fadeOut().empty();
-		$( ".project" ).load( "projects/" + projectName + ".html");
+		$("#container").removeClass();
+		$(".main").fadeIn();
+		$('html, body').animate({ scrollTop: $(".work").offset().top }, 400);
+    }
 	});
+
+	//project buttons
 
 	$('.projectbutton').on("click", function(){
 		var projectName = $(this).attr('id');
+		History.pushState(null, "Search", "?" + projectName);
+			$(".project").fadeOut().empty();
+			$( ".project" ).load( "projects/" + projectName + ".html");
 			$(".main").fadeOut();
 			$(".project, .back").fadeIn(2000);
 			$('html, body').animate({scrollTop: 0 }, 400);
@@ -305,12 +326,15 @@
 	});
 
 	$(".back").on("click", function(){
+		History.pushState(null, "Work", "?work");
 		$(".back").hide();
 		$(".project").fadeOut().empty();
 		$("#container").removeClass();
 		$(".main").fadeIn();
 		$('html, body').animate({ scrollTop: $(".work").offset().top }, 400);
 	});
+
+	//scroll-to-top button
 	function upTop(){
 		if($(window).scrollTop() > 1000){
 			$(".uptop").fadeIn();
@@ -318,33 +342,10 @@
 			$(".uptop").fadeOut();
 		}
 	}
+
+
+	//hide logo
 	function logoToggle(){
 		if($(window).scrollTop() > 250){
 			$(".logo").fadeIn();
-			$("nav").css("background-color", "rgba(33, 204, 187, .9)");
-			$(".back i").css("color", "black");
-		} else {
-			$(".logo").fadeOut();
-			$("nav").css("background-color", "rgba(33, 204, 187, 0)");
-			$(".back i").css("color", "white");
-		}
-	}
-	
-	$(window).scroll( function(){
-		upTop();
-		logoToggle();
-	});
-
-	$('.logo').on("mouseenter", function(){
-		$(".logo-name").addClass("show");
-	});
-	$('.logo').on("mouseleave", function(){
-		$(".logo-name").removeClass("show");
-	});
-
-	$(".navicon").on("click", function(){
-		$(".navs").fadeToggle();
-	});
-	</script>
-</body>
-</html>
+			$("
