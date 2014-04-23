@@ -746,6 +746,9 @@ svg {
 	.third{
 		width: 33.333%;
 	}
+	.fifth{
+		width:20%;
+	}
 	p{
 		display:inline-block;
 		padding-bottom:10px;
@@ -791,6 +794,14 @@ svg {
 	}
 }
 
+.black-border{
+	border:solid 20px #333;
+	@include breakpoint(medium){
+		border:solid 10px #333;
+		
+	}
+}
+
 .somafm-border{
 	border:solid 20px $pink;
 	@include breakpoint(medium){
@@ -798,7 +809,7 @@ svg {
 		
 	}
 }
-.bikenow-border{
+.bikenow-border, .coffee-border{
 	border:solid 20px $turq;
 	@include breakpoint(medium){
 		border:solid 10px $turq;
@@ -814,7 +825,7 @@ svg {
 	height: auto;
 	margin: 0 auto;
 	padding:40px;
-	padding-top:100px;
+	padding-top:0px;
 	padding-bottom:150px;
 	overflow:hidden;
 }
@@ -822,7 +833,7 @@ svg {
 .header-img{
 	position:absolute;
 	top:0;right:0;left:0;
-	height:400px;
+	height:325px;
 	&.bikenow{
 	background: #333 url('../imgs/projects/bikenow.png') center center no-repeat;
 }
@@ -835,12 +846,15 @@ svg {
 	&.infanta{
 	background: #333 url('../imgs/projects/infanta.png') center center no-repeat;
 	}
+	&.coffee{
+	background: #333 url('../imgs/projects/coffee.png') center center no-repeat;
+	}
 }
 
 .project-title{
 	position:absolute;
 	background-color: $pink;
-	margin-top:190px;
+	margin-top:150px;
 }
 
 .turq-bg{

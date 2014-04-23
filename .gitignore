@@ -3,3 +3,4 @@ node_modules/
 .sass-cache
 dploy.yaml
 imgs/projects/uncompressed
+build-files/
