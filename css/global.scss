@@ -725,7 +725,6 @@ svg {
 		width:100%;
 	}
 	img{
-	
 		width:100%;
 		border:none;
 		padding:5px;
@@ -737,9 +736,7 @@ svg {
 		width:50%;
 		margin-left:30%;
 	}
-	.shadow{
-		box-shadow: 0 0 5px 3px rgba(0,0,0,.1);
-	}
+	
 	.half{
 		width: 50%;
 	}
@@ -789,7 +786,7 @@ svg {
 	  padding-right:20px;
 	  border: solid 2px #fff;
 	  z-index:10000;
-
+	  top:240px;
 	  
 	}
 }
@@ -802,7 +799,7 @@ svg {
 	}
 }
 
-.somafm-border{
+.somafm-border, .negativespace-border{
 	border:solid 20px $pink;
 	@include breakpoint(medium){
 		border:solid 10px $pink;
@@ -833,7 +830,7 @@ svg {
 .header-img{
 	position:absolute;
 	top:0;right:0;left:0;
-	height:325px;
+	height:340px;
 	&.bikenow{
 	background: #333 url('../imgs/projects/bikenow.png') center center no-repeat;
 }
@@ -849,13 +846,12 @@ svg {
 	&.coffee{
 	background: #333 url('../imgs/projects/coffee.png') center center no-repeat;
 	}
+	&.negativespace{
+	background: #333 url('../imgs/projects/negativespace.png') center center no-repeat;
+	}
 }
 
-.project-title{
-	position:absolute;
-	background-color: $pink;
-	margin-top:150px;
-}
+
 
 .turq-bg{
 	background-color: $turq;
@@ -1000,9 +996,6 @@ i.uptop{
 	padding-top:0;
 	display:block;
 	
-}
-.project-content img{
-	border:none;
 }
 .about p{
 	font-size:1.6em;
