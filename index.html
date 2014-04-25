@@ -319,18 +319,20 @@
 
 	//check if at home
 	History.Adapter.bind(window,'statechange',function(){ 
-    var State = History.getState(); 
-    History.log(State.data, State.title, State.url);
-      if ( State = "?work"){
-    	$(".back").hide();
-		$(".project").fadeOut().empty();
-		$("#container").removeClass();
-		$(".main").fadeIn();
-
-    }
+	    var State = History.getState(); 
+	    History.log(State.data, State.title, State.url);
+	      if ( State = "?work"){
+	    	$(".back").hide();
+			$(".project").fadeOut().empty();
+			$("#container").removeClass();
+			$(".main").fadeIn();
+	    } else { 
+	    	$("uptop").hide();
+	    }
 	});
 
 	//project buttons
+
 	var lastLoc = "default";
 	$('.projectbutton').on("click", function(){
 		var projectName = $(this).attr('id');
@@ -342,9 +344,6 @@
 			$(".project, .back").fadeIn(2000);
 			$('html, body').animate({scrollTop: 0 }, 500);
 			$("#container").addClass( projectName + "-border");	
-
-			
-
 	});
 
 	$(".back").on("click", function(){
@@ -354,8 +353,6 @@
 		$("#container").removeClass();
 		$(".main").fadeIn();
 		$('html, body').animate({ scrollTop: lastLoc }, 0);
-	
-
 	});
 
 	//scroll-to-top button
@@ -420,7 +417,6 @@
 	    scrollTop: 0
 	 }, 400);
 	});
-
 
 	</script>
 </body>
