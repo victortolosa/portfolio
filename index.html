@@ -355,6 +355,15 @@
 		$('html, body').animate({ scrollTop: lastLoc }, 0);
 	});
 
+	//next project button
+	$(document).on("click", ".nextproject", function(){
+			var projectName = $(this).attr('id');
+			$('html, body').animate({scrollTop: 0 }, 400);
+			$(".project").fadeOut().empty().load( "projects/" + projectName + ".html");
+			$("#container").addClass( projectName + "-border");	
+			$(".project, .back").fadeIn(2000);
+		
+	});
 	//scroll-to-top button
 	function upTop(){
 		if($(window).scrollTop() > 1000){
