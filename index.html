@@ -136,18 +136,22 @@
 		</div>
 		<section class="details">
 			<div class="wrap">
+				<a href="assets/victor-tolosa_resume.pdf">
 				<figure>
 				<img src="imgs/svg/resume.svg">
 				<figcaption>
 				<h1>Download My Resumé</h1>
 				</figcaption>
 				</figure>
+				</a>
+				<a href="http://www.linkedin.com/pub/victor-tolosa/72/4a0/988/">
 				<figure>
 				<img src="imgs/svg/linkedin.svg">
 				<figcaption>
 				<h1>Visit My LinkedIn</h1>
 				</figcaption>
 				</figure>
+				</a>
 			</div>
 		</section>
 		<section class="contact">
@@ -178,15 +182,17 @@
 		<div class="wrap"> 
 		<h1 class="title">Follow Me</h1>
 		<div class="iconwrap">
-		<a href="www.twitter.com/victorj589">
 		<div class="icon">
+		<a href="http://www.twitter.com/victorj589">
 		<i class="fa fa-twitter"></i>
 		<h1>Twitter</h1>
-		</div>
 		</a>
+		</div>
 		
-		<a href="http://www.codepen.com/victortolosa">
+		
+		
 		<div class="icon">
+		<a href="http://www.codepen.io/victortolosa">
 		<svg  class="codepen" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			 viewBox="0 0 70 70" enable-background="new 0 0 70 70" xml:space="preserve">
 		<g>
@@ -223,6 +229,7 @@
 		</a>
 
 		<div class="icon">
+		<a href="http://www.behance.net/victorj589">
 		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			 viewBox="0 0 70 70" enable-background="new 0 0 70 70" xml:space="preserve">
 		<g>
@@ -243,8 +250,11 @@
 		</g>
 		</svg>
 		<h1>Behance</h1>
+		</a>
 		</div>
+
 		<div class="icon">
+		<a href="http://www.github.com/victortolosa">
 		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			 viewBox="0 0 70 70" enable-background="new 0 0 70 70" xml:space="preserve">
 		<g>
@@ -274,7 +284,9 @@
 		</g>
 		</svg>
 		<h1>GitHub</h1>
+		</a>
 		</div>
+
 		</div>
 		</div>
 		</section>
@@ -302,7 +314,6 @@
 	// Establish Variables
 	var State = History.getState(),
 	$log = $('#log');
-
 	// Log Initial State
 	History.log('initial:', State.data, State.title, State.url);
 
@@ -315,21 +326,25 @@
 		$(".project").fadeOut().empty();
 		$("#container").removeClass();
 		$(".main").fadeIn();
-		$('html, body').animate({ scrollTop: $(".work").offset().top }, 400);
+
     }
 	});
 
 	//project buttons
-
+	var lastLoc = "default";
 	$('.projectbutton').on("click", function(){
 		var projectName = $(this).attr('id');
 		History.pushState(null, "Search", "?" + projectName);
+			lastLoc = $(document).scrollTop();
 			$(".project").fadeOut().empty();
 			$( ".project" ).load( "projects/" + projectName + ".html");
 			$(".main").fadeOut();
 			$(".project, .back").fadeIn(2000);
-			$('html, body').animate({scrollTop: 0 }, 400);
+			$('html, body').animate({scrollTop: 0 }, 500);
 			$("#container").addClass( projectName + "-border");	
+
+			
+
 	});
 
 	$(".back").on("click", function(){
@@ -338,7 +353,9 @@
 		$(".project").fadeOut().empty();
 		$("#container").removeClass();
 		$(".main").fadeIn();
-		$('html, body').animate({ scrollTop: $(".work").offset().top }, 400);
+		$('html, body').animate({ scrollTop: lastLoc }, 0);
+	
+
 	});
 
 	//scroll-to-top button
@@ -349,7 +366,6 @@
 			$(".uptop").fadeOut();
 		}
 	}
-
 
 	//hide logo
 	function logoToggle(){
@@ -379,6 +395,33 @@
 	$(".navicon").on("click", function(){
 		$(".navs").fadeToggle();
 	});
+
+	//nav auto scroll
+		$(".towork, .more").on("click", function(){
+	$('html, body').animate({
+	    scrollTop: $(".work").offset().top
+	 }, 400);
+	});
+
+	$(".toabout").on("click", function(){
+	$('html, body').animate({
+	    scrollTop: $(".about").offset().top
+	 }, 400);
+	});
+
+	$(".tocontact").on("click", function(){
+	$('html, body').animate({
+	    scrollTop: $(".contact").offset().top
+	 }, 400);
+	});
+
+	$(".uptop, .logo").on("click", function(){
+	$('html, body').animate({
+	    scrollTop: 0
+	 }, 400);
+	});
+
+
 	</script>
 </body>
 </html>
