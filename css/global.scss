@@ -23,7 +23,6 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 #container {
-
 	width: 100%;
 	height: auto;
 	position:relative;
@@ -135,16 +134,17 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		right:0;top:0;
 		position: fixed;
 		display: none;
-		line-height:45px;
-		font-size:25px;
+		font-size:2em;
 		text-align:center;
 		width:50px;
 		height:50px;
 		color:#fff;
-		transform: rotate(90deg);
 		margin:7px;
 		cursor:pointer;
 		transition: all 500ms;
+		@include breakpoint(medium){
+			display:block;
+		}
 		&:hover{
 		}
 		
@@ -511,6 +511,10 @@ input{
 	padding:0;margin:0;
 	height: auto;
 	position:relative;
+	font-size: .9em;
+	@include breakpoint(medium){
+		
+	}
 	&:after{
 			display:block;
 			position:absolute;
@@ -892,37 +896,33 @@ footer {
 	background-color: lighten(#000, 14%);
 	position:relative;
 	float:left;
-	height:180px;
+	height:200px;
 	width:100%;
-	
-
 	.wrap{
-		padding-top:38px;
+		padding-top:50px;
 		a {
 			font-size:1.2em;
 			font-family: klinic-light;
-			color:#666;
+			color:#888;
 			&:hover{
 			color: $turq;
 			transition: color 300ms;
 			}
 		}
 	}
-	hr {
+	section{
+		position:relative;
+		width:50%;
+		height:100%;
 		float:left;
-		border:none;
-		border-bottom: solid 1px #444;
-		display: block;
-		width: 270px;
-		margin-bottom:5px;
-		&:before{
-			content:"";
-			clear: both; 
-			float: left; 
-			display: block; 
-			position: relative;
+		&:nth-of-type(2){
+			text-align:right;
+			a{
+				display:block;
+			}
 		}
 	}
+	h1{font-size:1.5em;padding:0;margin:0; color:#eee;}
 	p{
 		padding:0;margin:0;
 		display: inline-block;
@@ -930,14 +930,12 @@ footer {
 		width:100%;
 		height:24px;
 		font-size:1.2em;
-		color:#666;
-		&:last-child{
-			font-size:1.2em;
-		}
+		color:#888;
+	
 	}
 	i{
 		color: #444;
-		font-size:1.4em;;
+		font-size:1em;;
 	}
 
 }
