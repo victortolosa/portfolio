@@ -79,6 +79,11 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		width:100%;
 		height:60px;
 		color:#fff;
+		.wrap {
+			@include breakpoint(medium){
+				width:100%;
+			}
+		}
 		.logo{
 			position:relative;
 			z-index:100;
@@ -88,7 +93,9 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 			margin-top:17px;
 			cursor:pointer;
 			@include breakpoint(medium){
-				display:none;
+				position:absolute;;
+				left:20px;
+				top:0;
 			}
 		}
 		.logo-name{
@@ -142,7 +149,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		margin:7px;
 		cursor:pointer;
 		transition: all 500ms;
-		padding-top:10px;
+		padding-top:13px;
 		@include breakpoint(medium){
 			display:inline-block;
 		}
