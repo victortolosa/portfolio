@@ -82,6 +82,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		.wrap {
 			@include breakpoint(medium){
 				width:100%;
+				padding-right:50px;
 			}
 		}
 		.logo{
