@@ -771,19 +771,16 @@ svg {
 	}
 
 	a, .nextproject{
-		font-family: klinic-medium;
-		font-size:1.8em;
+		font-family: klinic-light;
+		font-size:1.5em;
 		border:none;
-		display:block;
+		display:inline-block;
 		width:400px;
-		height:100px;
+		height: auto;
 		margin: auto;
 		transition: all 300ms;
 		cursor:pointer;
-		padding: 10px;
-		padding-left:20px;
-		padding-right:20px;
-		padding-top:20px;
+		padding: 20px;
 		text-align:center;
 		color:#fff;
 		background-color: #999;
@@ -810,7 +807,7 @@ svg {
 	}
 }
 
-.black-border{
+.black-border, .infanta-border{
 	border:solid 20px #333;
 	@include breakpoint(medium){
 		border:solid 10px #333;
