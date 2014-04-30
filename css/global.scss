@@ -807,7 +807,7 @@ svg {
 	}
 }
 
-.black-border, .infanta-border{
+.black-border, .infanta-border, .negativespace-border{
 	border:solid 20px #333;
 	@include breakpoint(medium){
 		border:solid 10px #333;
@@ -815,7 +815,7 @@ svg {
 	}
 }
 
-.somafm-border, .negativespace-border{
+.somafm-border {
 	border:solid 20px $pink;
 	@include breakpoint(medium){
 		border:solid 10px $pink;
