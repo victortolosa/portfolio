@@ -12,6 +12,7 @@
 <body>	
 	<button class="back"><i class="fa fa-times-circle-o"></i></button>
 	<div id="container">
+	<span class="border">
 		<div class="main">
 		<section class="header">
 		<nav>
@@ -309,11 +310,14 @@
 			<a href="#" class="towork">Work</a>
 			<a href="#" class="toabout">About Me</a>
 			<a href="#" class="tocontact">Contact</a>
+			</section>
 			</div>
 		</footer>
 		</div>
 		<div class="project">
 		</div>
+
+</span>
 </div>
 
 <script src="js/production.min.js"></script>
@@ -351,14 +355,14 @@
 			$(".main").fadeOut();
 			$(".project, .back").fadeIn(2000);
 			$('html, body').animate({scrollTop: 0 }, 500);
-			$("#container").addClass( projectName + "-border");	
+			$("#border").addClass( projectName + "-border");	
 	});
 
 	$(".back").on("click", function(){
 		History.pushState(null, "Work", "?work");
 		$(".back").hide();
 		$(".project").fadeOut().empty();
-		$("#container").removeClass();
+		$("#border").removeClass();
 		$(".main").fadeIn();
 		$('html, body').animate({ scrollTop: lastLoc }, 0);
 	});
@@ -368,7 +372,7 @@
 			var projectName = $(this).attr('id');
 			$('html, body').animate({scrollTop: 0 }, 400);
 			$(".project").fadeOut().empty().load( "projects/" + projectName + ".html");
-			$("#container").addClass( projectName + "-border");	
+			$("#border").addClass( projectName + "-border");	
 			$(".project, .back").fadeIn(2000);
 		
 	});

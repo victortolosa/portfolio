@@ -20,9 +20,6 @@ $Body = "";
 $Body .= "Name: ";
 $Body .= $Name;
 $Body .= "\n";
-$Body .= "Tel: ";
-$Body .= $Tel;
-$Body .= "\n";
 $Body .= "Email: ";
 $Body .= $Email;
 $Body .= "\n";
@@ -35,9 +32,13 @@ $success = mail($EmailTo, $Subject, $Body, "From: <$EmailFrom>");
 
 // redirect to success page 
 if ($success){
-  print "success";
+	echo '<script language="javascript">';
+	echo 'alert("message successfully sent")';
+	echo '</script>';
 }
 else{
-  print "<meta http-equiv=\"refresh\" content=\"0;URL=error.htm\">";
+	echo '<script language="javascript">';
+	echo 'alert("Failed")';
+	echo '</script>';
 }
 ?>
