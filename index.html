@@ -12,7 +12,8 @@
 <body>	
 	<button class="back"><i class="fa fa-times-circle-o"></i></button>
 	<div id="container">
-	<span class="border">
+	<span id="border">
+	</span>
 		<div class="main">
 		<section class="header">
 		<nav>
@@ -165,7 +166,7 @@
 				<span class="form">
 				<h1 class="title contactme">Get In Touch</h1>
 				
-			<form method="post" action="contactengine.php">
+			<form method="post" action="contactengine.php" onsubmit="return checkvalue(this)">
 				<span class="nameholder">
 				<input type="text" name="Name" id="name" placeholder="Your Name" />
 				</span>
@@ -317,7 +318,7 @@
 		<div class="project">
 		</div>
 
-</span>
+
 </div>
 
 <script src="js/production.min.js"></script>
@@ -431,6 +432,17 @@
 	 }, 400);
 	});
 
+	//
+	function checkvalue() { 
+    var mystring = document.getElementById('email').value; 
+    if(!mystring.match(/\S/)) {
+        alert ('I need your email please!');
+        return false;
+    } else {
+       
+        return true;
+    }
+}
 	</script>
 </body>
 </html>
