@@ -1020,7 +1020,9 @@ footer {
 	z-index:10000;
 	color:#fff;
 	@include breakpoint (medium){
-		font-size:.6em;
+		font-size:.8em;
+		margin-top:18px;
+		margin-right:18px;
 	}
 }
 
