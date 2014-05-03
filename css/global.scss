@@ -1019,10 +1019,11 @@ footer {
 	background-color:transparent;
 	z-index:10000;
 	color:#fff;
+	@include breakpoint (medium){
+		font-size:.6em;
+	}
 }
-.back:hover{
-	color:#ddd;
-}
+
 i.uptop{
 	font-size:1.7em;
 	margin-bottom:20px;
