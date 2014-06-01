@@ -31,7 +31,8 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	overflow: hidden;
 	@include breakpoint(small){
 			width:100%;
-			
+
+			margin: 0 auto;
 		}
 }
 
@@ -119,6 +120,9 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 			margin-top:20px;
 			line-height:12px;
 			text-align:right;
+			@include breakpoint(small){
+				margin-top:0px;
+		}
 			li{
 
 				padding:0;
@@ -171,6 +175,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	@include breakpoint(small){
 		width:100%;
 		line-height:30px;
+		padding:20px;
 	}
 	.hello {
 		color:#fff;
@@ -179,7 +184,6 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		margin-bottom: 5px;
 	}
 	.title {
-
 		font-family: klinic-medium;
 		color: #fff;
 		margin-top: 10px;
@@ -210,9 +214,13 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		padding:0;
 		padding-top:40px;
 	}
-	.title {
+	h1.title {
 		color:$pink;
-		font-size: 2em;
+		font-size: 2.2em;
+		@include breakpoint(small){
+			width:100%;
+		text-align:center;
+		}
 	}
 
 	figure{
@@ -221,13 +229,19 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 		width:100%;
 		height: auto;
 		margin-bottom:90px;
-		
+		@include breakpoint(small){
+			margin-bottom:150px;
+			font-size:1.1em;
+		}
 		img{
 			float:left;
 			width: 60%;
 			@include breakpoint(medium){
-				width:88%;
+				width:85%;
 			}
+			@include breakpoint(small){
+				width:75%;
+		}
 			margin:0; padding:0;
 		}
 		&:nth-child(even) img{
@@ -240,6 +254,9 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 				margin:0;
 				padding:0;
 			}
+			@include breakpoint(small){
+				width:75%;
+		}
 
 		}
 		&:nth-child(even) figcaption{
@@ -264,11 +281,13 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 				text-align:left;
 			}
 			h1{
-				font-size:1.8em;
+				font-size:1.6em;
 				padding:0;
 				margin:0;
 				margin-bottom:10px;
-
+				@include breakpoint(small){
+					font-size:1.6em;
+				}
 
 			}
 			small{
@@ -285,7 +304,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	
 		figcaption button{
 			font-size:1.4em;
-			width: 95%;
+			width: 90%;
 			margin: 0 auto;
 			transition: all 500ms;
 			height: 60px;
