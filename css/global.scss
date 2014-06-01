@@ -54,6 +54,9 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 	min-height:0;
 	height:350px;
 	background: darken(turquoise, 10%);
+	@include breakpoint(xsmall){
+		height:450px;
+	}
 	.wrap{
 		height: 100%;
 	}
@@ -292,6 +295,8 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 			}
 			small{
 				font-size:1em;
+				display:inline-block;
+				width:90%;
 				
 			}
 			p{
