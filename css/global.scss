@@ -248,9 +248,10 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 			margin:0; padding:0;
 		}
 		&:nth-child(even) img{
-			width:61%;
+			width:60%;
+			padding-right:5%;
 			float:right;
-			padding-right:30px;
+			
 			@include breakpoint(medium){
 				float:left;
 				width:90%;
@@ -787,8 +788,11 @@ span#border{
 	img{
 		width:100%;
 		border:none;
-		padding:5px;
+		padding:11px;
 		float:left;
+		padding-top:80px;
+		padding-bottom:80px;
+	
 	}
 	.smallcenter{
 		display:block;
@@ -809,6 +813,7 @@ span#border{
 		display:inline-block;
 		padding-bottom:10px;
 		margin-bottom:10px;
+
 	}
 
 
@@ -818,7 +823,7 @@ span#border{
 	  position: absolute;
 	  background-color: transparent;
 	  padding: 10px;
-	  padding-left: 20px;
+	  padding-left: 15px;
 	  padding-right:20px;
 	  border: solid 2px #fff;
 	  z-index:10000;
@@ -848,6 +853,12 @@ span#border{
 		border:solid 10px $turq;
 	}
 }
+.hoteltonight-border{
+	border:solid 20px #3b2151;
+	@include breakpoint(medium){
+		border:solid 10px #3b5121;
+	}
+}
 .no-border{
 	border:none;
 }
@@ -861,6 +872,7 @@ span#border{
 	padding-top:0px;
 	padding-bottom:0;
 	overflow:hidden;
+
 }
 .iframe {
 	width: calc(100% - 10px);
@@ -878,9 +890,12 @@ img.shadow{
 	position:absolute;
 	top:0;right:0;left:0;
 	height:340px;
+	&.hoteltonight{
+	background: #333 url('../imgs/projects/hoteltonight.png') center center no-repeat;
+	}
 	&.bikenow{
 	background: #333 url('../imgs/projects/bikenow.png') center center no-repeat;
-}
+	}
 	&.somafm{
 	background: #333 url('../imgs/projects/somafm.png') center center no-repeat;
 	}
@@ -922,8 +937,10 @@ img.shadow{
 		font-family: klinic-light;
 		font-size:1.5em;
 		border:none;
-		display:inline-block;
+		display:block;
+		position:relative;
 		height: auto;
+		min-height: 100px;
 		margin: auto;
 		transition: all 300ms;
 		cursor:pointer;
@@ -934,11 +951,24 @@ img.shadow{
 		border: none;
 		border-bottom: solid 4px #444;
 		float:left;
-		width:100%;
+		width:99%;
+		width:calc(100% - 10px);
+		margin:5px;
 		&:hover{
 			background-color: #444;
-		border: none;
-		border-bottom: solid 4px #555;
+			border: none;
+			border-bottom: solid 4px #555;
+		}
+
+		&.half{
+			width:calc(50% - 20px);
+			&:nth-of-type(1){
+				margin-right:25px;
+			}
+			&:nth-of-type(2){
+				margin-right:0;
+			}
+
 		}
 
 	}
@@ -1033,7 +1063,7 @@ footer {
 }
 
 .back{
-
+	
 	font-size:1em;
 	width:30px;
 	height:30px;
@@ -1066,7 +1096,7 @@ i.uptop{
 }
 
 .project-content p{
-	font-size:1.3em;
+	font-size:1.6em;
 	
 	padding:10px;
 
@@ -1076,10 +1106,24 @@ i.uptop{
 	display:block;
 	
 }
+.project-content h1{
+	padding:0;
+	margin:0;
+	padding-left:10px;
+}
 .about p{
 	font-size:1.6em;
 }
-
+img.appstore{
+	height:50px;
+	width:auto;
+	display:block;
+	padding:0;
+	position: absolute;
+	top:0;right:0;left:0;bottom:0;
+	margin: auto;
+	padding-top:10px;
+}
 @media only screen and (max-width: 71.25em) {
   figure {   font-size:1em; }
 }

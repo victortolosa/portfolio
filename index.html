@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
-    <meta name="description" content="Victor Tolosa's Online Portfolio">
+    <meta name="Victor Tolosa Design" content="Victor Tolosa Online Portfolio Web Design Webdesign UX UI Visual Design">
 	<link rel="stylesheet" href="css/build.prefixed.css" type="text/css">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -42,6 +42,16 @@
 			<div class="wrap">
 				<h1 class="title">Recent Work</h1>
 				<div id="allwork">
+
+					<figure>
+					<img src="imgs/projectmockups/hoteltonight.png">
+					<figcaption>
+					<h1>HotelTonight</h1>
+					<small>Categories: Product Design, User Experience/Interface, iOS &amp; Android.</small>
+					<p> I had the privilege to work on the new iteration of HotelTonight. For this particular case study, I will be talking about a very particular design challenge.</p>
+					<button class="projectbutton" id="hoteltonight">View Project</button>
+					</figcaption>
+					</figure>
 
 					<figure>
 					<img src="imgs/projectmockups/bikenow.png">
@@ -92,7 +102,7 @@
 					<figcaption>
 					<h1>Coffee</h1>
 					<small>Categories: Art Direction, Motion Graphics</small>
-					<p>For this personal project I collected daily statistics, analyzed, and gave context to coffee you get at a cafe"</p>
+					<p>For this personal project I collected daily statistics, analyzed, and gave context to coffee you get at a cafe.</p>
 					<button class="projectbutton" id="coffee">View Project</button>
 					</figcaption>
 					</figure>
@@ -324,6 +334,14 @@
 <script src="js/production.min.js"></script>
 <script src="js/stack/jquery.history.js"></script>
 <script>
+var manualStateChange = true;
+
+History.Adapter.bind(window,'statechange',function(){
+    if(manualStateChange == true){
+     $("#border").removeClass();
+    }
+    manualStateChange = true;
+});
 	// Establish Variables
 	var State = History.getState(),
 	$log = $('#log');
@@ -349,7 +367,7 @@
 	var lastLoc = "default";
 	$('.projectbutton').on("click", function(){
 		var projectName = $(this).attr('id');
-		History.pushState(null, "Search", "?" + projectName);
+		History.pushState(null, "Victor Tolosa: " + projectName, "?" + projectName);
 			lastLoc = $(document).scrollTop();
 			$(".project").fadeOut().empty();
 			$( ".project" ).load( "projects/" + projectName + ".html");
@@ -368,6 +386,7 @@
 		$('html, body').animate({ scrollTop: lastLoc }, 0);
 	});
 
+	
 	//next project button
 	$(document).on("click", ".nextproject", function(){
 			var projectName = $(this).attr('id');
@@ -443,6 +462,7 @@
         return true;
     }
 }
+
 	</script>
 </body>
 </html>
